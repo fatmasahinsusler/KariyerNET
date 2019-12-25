@@ -7,17 +7,22 @@ using System.Threading.Tasks;
 
 namespace KariyerNET.Model
 {
-    public class Experience : BaseEntity
+    public class References : BaseEntity
     {
+        //Referanslar
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string CompanyName { get; set; }
-        public string Sector { get; set; }
         public string Title { get; set; }
-        public DateTime StartedDate { get; set; }
-        public DateTime EndDate { get; set; }
-        public string LeavingReason { get; set; } // ayrılma nedeni
+        public string EMail { get; set; }
+        public string Phone { get; set; }
 
-        //nav prop
+        //mapping
+
         public int ResumeID { get; set; }
         public Resume Resume { get; set; }
+
+
+
     }
 }

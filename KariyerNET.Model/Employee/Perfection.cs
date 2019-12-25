@@ -9,8 +9,8 @@ namespace KariyerNET.Model
 {
     public class Perfection:BaseEntity
     {
+        //Yetkinlik
         public string PerfectionName { get; set; }
-
         //nav prop
         public int ResumeID { get; set; }
         public Resume Resume{ get; set; }

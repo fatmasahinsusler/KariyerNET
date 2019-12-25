@@ -9,7 +9,7 @@ namespace KariyerNET.Model
 {
     public class Resume : BaseEntity//Özgeçmiş
     {
-        public int UserID { get; set; } //?
+
         public string Name { get; set; }
         public string Surname { get; set; }
         public string EMail { get; set; }
@@ -18,14 +18,22 @@ namespace KariyerNET.Model
         public string CountryCode { get; set; }
         public string Phone { get; set; }
         public string Country { get; set; }
-        public string City { get; set; }
-        public string Town{ get; set; }
-        public string WebSite{ get; set; }
-        public string Address{ get; set; }
+        public string WebSite { get; set; }
+        public string Address { get; set; }
         public Gender Gender { get; set; }//Cinsiyet
         public DrivingLicense DrivingLicense { get; set; }//Ehliyet
         public MaritalStatus MaritalStatus { get; set; }//Medeni Hal
-        public string Nation{ get; set; }
+        public string Nation { get; set; }
+        public string PhotoURL { get; set; }
+        public MilitaryState MilitaryState { get; set; }
+
+        //mapping
+        public Login Login { get; set; }
+        public int LoginID { get; set; } //User ID yerine loginID kullanılıyor
+        public City City { get; set; }
+        public int CityID { get; set; }
+        public Town Town { get; set; }
+        public int TownID { get; set; }
 
     }
     public enum DrivingLicense
@@ -44,5 +52,11 @@ namespace KariyerNET.Model
     {
         Kadın,
         Erkek
+    }
+    public enum MilitaryState
+    {
+        Yapildi,
+        Muaf,
+        Yapilmadi
     }
 }
