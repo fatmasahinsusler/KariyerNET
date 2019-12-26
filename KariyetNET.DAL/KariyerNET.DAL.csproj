@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F211A3B0-33AC-42C7-98A3-0F41CAF774AC}</ProjectGuid>
+    <ProjectGuid>{470950A6-B6D4-4D2D-8CBC-5784C49E5B8B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KariyerNET.Model</RootNamespace>
-    <AssemblyName>KariyerNET.Model</AssemblyName>
+    <RootNamespace>KariyetNET.DAL</RootNamespace>
+    <AssemblyName>KariyetNET.DAL</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,29 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="City.cs" />
-    <Compile Include="Company\Company.cs" />
-    <Compile Include="Company\JobAdvert.cs" />
-    <Compile Include="Company\Sector.cs" />
-    <Compile Include="Employee\Certificate.cs" />
-    <Compile Include="Employee\Education.cs" />
-    <Compile Include="Employee\Exam.cs" />
-    <Compile Include="Employee\ExamInfo.cs" />
-    <Compile Include="Employee\Experience.cs" />
-    <Compile Include="Employee\Hobbie.cs" />
-    <Compile Include="Employee\Language.cs" />
-    <Compile Include="Employee\Login.cs" />
-    <Compile Include="Employee\Perfection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Employee\References.cs" />
-    <Compile Include="Employee\Resume.cs" />
-    <Compile Include="Town.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KariyerNET.Core\KariyerNET.Core.csproj">
-      <Project>{75f88362-a4d1-438b-b1b0-749604146610}</Project>
-      <Name>KariyerNET.Core</Name>
-    </ProjectReference>
+    <Folder Include="Abstract\" />
+    <Folder Include="Concrete\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
