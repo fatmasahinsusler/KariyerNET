@@ -1,8 +1,8 @@
 ﻿using KariyerNET.DAL.Abstract;
-using KariyerNET.DAL.Abstract.Company;
+using KariyerNET.DAL.Abstract.Firma;
 using KariyerNET.DAL.Abstract.Employee;
 using KariyerNET.DAL.Concrete;
-using KariyerNET.DAL.Concrete.Company;
+using KariyerNET.DAL.Concrete.Firma;
 using KariyerNET.DAL.Concrete.Employee;
 using Ninject.Modules;
 using System;

@@ -1,13 +1,14 @@
 ﻿using KariyerNET.Core.DAL;
+using KariyerNET.Model.Firma;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KariyerNET.DAL.Abstract.Company
+namespace KariyerNET.DAL.Abstract.Firma
 {
-    public interface ICompanyDAL : IRepository<Model.Company.Company>
+    public interface ICompanyDAL : IRepository<Company>
     {
     }
 }

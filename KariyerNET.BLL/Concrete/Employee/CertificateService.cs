@@ -1,4 +1,5 @@
-﻿using KariyerNET.Model;
+﻿using KariyerNET.DAL.Abstract.Employee;
+using KariyerNET.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,12 @@ namespace KariyerNET.BLL.Abstract.Employee
 {
 	public class CertificateService : ICertificateService
 	{
+        ICertificateDAL _certificateDAL;
+
+        public CertificateService(ICertificateDAL certificateDAL)
+        {
+            _certificateDAL = certificateDAL;
+        }
 		public void Delete(Certificate entity)
 		{
 			throw new NotImplementedException();

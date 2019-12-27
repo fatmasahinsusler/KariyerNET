@@ -1,4 +1,5 @@
-﻿using KariyerNET.Model;
+﻿using KariyerNET.DAL.Abstract.Employee;
+using KariyerNET.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,12 @@ namespace KariyerNET.BLL.Abstract.Employee
 {
 	public class ResumeService : IResumeService
 	{
+        IResumeDAL _resumeDAL;
+
+        public ResumeService(IResumeDAL resumeDAL)
+        {
+            _resumeDAL = resumeDAL;
+        }
 		public void Delete(Resume entity)
 		{
 			throw new NotImplementedException();

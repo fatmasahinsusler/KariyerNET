@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KariyerNET.Model.Company
+namespace KariyerNET.Model.Firma
 {
     public class JobAdvert : BaseEntity
     {

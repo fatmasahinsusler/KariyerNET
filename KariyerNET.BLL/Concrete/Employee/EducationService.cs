@@ -1,4 +1,5 @@
-﻿using KariyerNET.Model;
+﻿using KariyerNET.DAL.Abstract.Employee;
+using KariyerNET.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,11 @@ namespace KariyerNET.BLL.Abstract.Employee
 {
 	public class EducationService : IEducationService
 	{
+        IEducationDAL _educationDAL;
+        public EducationService(IEducationDAL educationDAL)
+        {
+            _educationDAL = educationDAL;
+        }
 		public void Delete(Education entity)
 		{
 			throw new NotImplementedException();

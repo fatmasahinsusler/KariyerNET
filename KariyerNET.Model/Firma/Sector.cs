@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KariyerNET.Model.Company
+namespace KariyerNET.Model.Firma
 {
-    public class Sector:BaseEntity
+    public class Sector : BaseEntity
     {
         public string SectorName { get; set; }
 

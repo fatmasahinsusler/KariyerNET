@@ -1,4 +1,5 @@
-﻿using KariyerNET.Model;
+﻿using KariyerNET.DAL.Abstract.Employee;
+using KariyerNET.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,11 @@ namespace KariyerNET.BLL.Abstract.Employee
 {
 	public class ExamInfoService : IExamInfoService
 	{
+        IExamInfoDAL _examInfoDAL;
+        public ExamInfoService(IExamInfoDAL examInfoDAL)
+        {
+            _examInfoDAL = examInfoDAL;
+        }
 		public void Delete(ExamInfo entity)
 		{
 			throw new NotImplementedException();

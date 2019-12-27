@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KariyerNET.Model.Company
+namespace KariyerNET.Model.Firma
 {
     public class Company : BaseEntity
     {
@@ -21,7 +21,7 @@ namespace KariyerNET.Model.Company
 
         public List<Sector> Sectors { get; set; }
 
-       public List<JobAdvert> Adverts { get; set; }
+        public List<JobAdvert> Adverts { get; set; }
 
     }
 }

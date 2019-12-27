@@ -1,4 +1,5 @@
-﻿using KariyerNET.Model;
+﻿using KariyerNET.DAL.Abstract.Employee;
+using KariyerNET.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,12 @@ namespace KariyerNET.BLL.Abstract.Employee
 {
 	public class LoginService : ILoginService
 	{
+        ILoginDAL _loginDAL;
+
+        public LoginService(ILoginDAL loginDAL)
+        {
+            _loginDAL = loginDAL;
+        }
 		public void Delete(Login entity)
 		{
 			throw new NotImplementedException();

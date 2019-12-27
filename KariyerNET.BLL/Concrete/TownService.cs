@@ -1,4 +1,5 @@
-﻿using KariyerNET.Model;
+﻿using KariyerNET.DAL.Abstract;
+using KariyerNET.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,12 @@ namespace KariyerNET.BLL.Abstract
 {
 	public class TownService : ITownService
 	{
+        ITownDAL _townDAL;
+
+        public TownService(ITownDAL townDAL)
+        {
+            _townDAL = townDAL;
+        }
 		public void Delete(Town entity)
 		{
 			throw new NotImplementedException();

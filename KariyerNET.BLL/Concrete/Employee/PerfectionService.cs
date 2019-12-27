@@ -1,4 +1,5 @@
-﻿using KariyerNET.Model;
+﻿using KariyerNET.DAL.Abstract.Employee;
+using KariyerNET.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,12 @@ namespace KariyerNET.BLL.Abstract.Employee
 {
 	public class PerfectionService : IPerfectionService
 	{
+        IPerfectionDAL _perfectionDAL;
+
+        public PerfectionService(IPerfectionDAL perfectionDAL)
+        {
+            _perfectionDAL = perfectionDAL;
+        }
 		public void Delete(Perfection entity)
 		{
 			throw new NotImplementedException();

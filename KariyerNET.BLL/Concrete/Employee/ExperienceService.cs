@@ -1,4 +1,5 @@
-﻿using KariyerNET.Model;
+﻿using KariyerNET.DAL.Abstract.Employee;
+using KariyerNET.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,11 @@ namespace KariyerNET.BLL.Abstract.Employee
 {
 	public class ExperienceService : IExperienceService
 	{
+        IExperienceDAL _experienceDAL;
+        public ExperienceService(IExperienceDAL experienceDAL)
+        {
+            _experienceDAL = experienceDAL;
+        }
 		public void Delete(Experience entity)
 		{
 			throw new NotImplementedException();

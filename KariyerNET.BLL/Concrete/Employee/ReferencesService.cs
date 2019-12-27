@@ -1,4 +1,5 @@
-﻿using KariyerNET.Model;
+﻿using KariyerNET.DAL.Abstract.Employee;
+using KariyerNET.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,12 @@ namespace KariyerNET.BLL.Abstract.Employee
 {
 	public class ReferencesService : IReferencesService
 	{
+        IReferencesDAL _referencesDAL;
+
+        public ReferencesService(IReferencesDAL referencesDAL)
+        {
+            _referencesDAL = referencesDAL;
+        }
 		public void Delete(References entity)
 		{
 			throw new NotImplementedException();

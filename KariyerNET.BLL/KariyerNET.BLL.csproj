@@ -44,9 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\Company\ICompanyService.cs" />
-    <Compile Include="Abstract\Company\IJobAdvertService.cs" />
-    <Compile Include="Abstract\Company\ISectorService.cs" />
     <Compile Include="Abstract\Employee\ICertificateService.cs" />
     <Compile Include="Abstract\Employee\IEducationService.cs" />
     <Compile Include="Abstract\Employee\IExamInfoService.cs" />
@@ -58,12 +55,12 @@
     <Compile Include="Abstract\Employee\IPerfectionService.cs" />
     <Compile Include="Abstract\Employee\IReferencesService.cs" />
     <Compile Include="Abstract\Employee\IResumeService.cs" />
+    <Compile Include="Abstract\Firma\ICompanyService.cs" />
+    <Compile Include="Abstract\Firma\IJobAdvertService.cs" />
+    <Compile Include="Abstract\Firma\ISectorService.cs" />
     <Compile Include="Abstract\IBaseService.cs" />
     <Compile Include="Abstract\ICityService.cs" />
     <Compile Include="Abstract\ITownService.cs" />
-    <Compile Include="Concrete\Company\CompanyService.cs" />
-    <Compile Include="Concrete\Company\JobAdvertService.cs" />
-    <Compile Include="Concrete\Company\SectorService.cs" />
     <Compile Include="Concrete\Employee\CertificateService.cs" />
     <Compile Include="Concrete\Employee\EducationService.cs" />
     <Compile Include="Concrete\Employee\ExamInfoService.cs" />
@@ -76,6 +73,9 @@
     <Compile Include="Concrete\Employee\ReferencesService.cs" />
     <Compile Include="Concrete\Employee\ResumeService.cs" />
     <Compile Include="Concrete\CityService.cs" />
+    <Compile Include="Concrete\Firma\CompanyService.cs" />
+    <Compile Include="Concrete\Firma\JobAdvertService.cs" />
+    <Compile Include="Concrete\Firma\SectorService.cs" />
     <Compile Include="Concrete\TownService.cs" />
     <Compile Include="Ninject\CustomDALModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

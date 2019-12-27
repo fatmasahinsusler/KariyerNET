@@ -43,9 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="City.cs" />
-    <Compile Include="Company\Company.cs" />
-    <Compile Include="Company\JobAdvert.cs" />
-    <Compile Include="Company\Sector.cs" />
+    <Compile Include="Firma\Company.cs" />
+    <Compile Include="Firma\JobAdvert.cs" />
+    <Compile Include="Firma\Sector.cs" />
     <Compile Include="Employee\Certificate.cs" />
     <Compile Include="Employee\Education.cs" />
     <Compile Include="Employee\Exam.cs" />
@@ -66,5 +66,6 @@
       <Name>KariyerNET.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,5 @@
-﻿using KariyerNET.Model;
+﻿using KariyerNET.DAL.Abstract.Employee;
+using KariyerNET.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,11 @@ namespace KariyerNET.BLL.Abstract.Employee
 {
 	public class HobbieService : IHobbieService
 	{
+        IHobbieDAL _hobbieDAL;
+        public HobbieService(IHobbieDAL hobbieDAL)
+        {
+            _hobbieDAL = hobbieDAL;
+        }
 		public void Delete(Hobbie entity)
 		{
 			throw new NotImplementedException();

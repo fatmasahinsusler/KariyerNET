@@ -52,9 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\Company\ICompanyDAL.cs" />
-    <Compile Include="Abstract\Company\IJobAdvertDAL.cs" />
-    <Compile Include="Abstract\Company\ISectorDAL.cs" />
     <Compile Include="Abstract\Employee\ICertificateDAL.cs" />
     <Compile Include="Abstract\Employee\IEducationDAL.cs" />
     <Compile Include="Abstract\Employee\IExamDAL.cs" />
@@ -66,12 +63,15 @@
     <Compile Include="Abstract\Employee\IPerfectionDAL.cs" />
     <Compile Include="Abstract\Employee\IReferencesDAL.cs" />
     <Compile Include="Abstract\Employee\IResumeDAL.cs" />
+    <Compile Include="Abstract\Firma\ICompanyDAL.cs" />
+    <Compile Include="Abstract\Firma\IJobAdvertDAL.cs" />
+    <Compile Include="Abstract\Firma\ISectorDAL.cs" />
     <Compile Include="Abstract\ICityDAL.cs" />
     <Compile Include="Abstract\ITownDAL.cs" />
     <Compile Include="Concrete\CityRepository.cs" />
-    <Compile Include="Concrete\Company\CompanyRepository.cs" />
-    <Compile Include="Concrete\Company\JobAdvertRepository.cs" />
-    <Compile Include="Concrete\Company\SectorRepository.cs" />
+    <Compile Include="Concrete\Firma\CompanyRepository.cs" />
+    <Compile Include="Concrete\Firma\JobAdvertRepository.cs" />
+    <Compile Include="Concrete\Firma\SectorRepository.cs" />
     <Compile Include="Concrete\Employee\CertificateRepository.cs" />
     <Compile Include="Concrete\Employee\EducationRepository.cs" />
     <Compile Include="Concrete\Employee\ExamInfoRepository.cs" />
