@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,8 +44,59 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Abstract\Company\ICompanyService.cs" />
+    <Compile Include="Abstract\Company\IJobAdvertService.cs" />
+    <Compile Include="Abstract\Company\ISectorService.cs" />
+    <Compile Include="Abstract\Employee\ICertificateService.cs" />
+    <Compile Include="Abstract\Employee\IEducationService.cs" />
+    <Compile Include="Abstract\Employee\IExamInfoService.cs" />
+    <Compile Include="Abstract\Employee\IExamService.cs" />
+    <Compile Include="Abstract\Employee\IExperienceService.cs" />
+    <Compile Include="Abstract\Employee\IHobbieService.cs" />
+    <Compile Include="Abstract\Employee\ILanguageService.cs" />
+    <Compile Include="Abstract\Employee\ILoginService.cs" />
+    <Compile Include="Abstract\Employee\IPerfectionService.cs" />
+    <Compile Include="Abstract\Employee\IReferencesService.cs" />
+    <Compile Include="Abstract\Employee\IResumeService.cs" />
+    <Compile Include="Abstract\IBaseService.cs" />
+    <Compile Include="Abstract\ICityService.cs" />
+    <Compile Include="Abstract\ITownService.cs" />
+    <Compile Include="Concrete\Company\CompanyService.cs" />
+    <Compile Include="Concrete\Company\JobAdvertService.cs" />
+    <Compile Include="Concrete\Company\SectorService.cs" />
+    <Compile Include="Concrete\Employee\CertificateService.cs" />
+    <Compile Include="Concrete\Employee\EducationService.cs" />
+    <Compile Include="Concrete\Employee\ExamInfoService.cs" />
+    <Compile Include="Concrete\Employee\ExamService.cs" />
+    <Compile Include="Concrete\Employee\ExperienceService.cs" />
+    <Compile Include="Concrete\Employee\HobbieService.cs" />
+    <Compile Include="Concrete\Employee\LanguageService.cs" />
+    <Compile Include="Concrete\Employee\LoginService.cs" />
+    <Compile Include="Concrete\Employee\PerfectionService.cs" />
+    <Compile Include="Concrete\Employee\ReferencesService.cs" />
+    <Compile Include="Concrete\Employee\ResumeService.cs" />
+    <Compile Include="Concrete\CityService.cs" />
+    <Compile Include="Concrete\TownService.cs" />
+    <Compile Include="Ninject\CustomDALModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\KariyerNET.Core\KariyerNET.Core.csproj">
+      <Project>{75F88362-A4D1-438B-B1B0-749604146610}</Project>
+      <Name>KariyerNET.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KariyerNET.DAL\KariyerNET.DAL.csproj">
+      <Project>{103D384A-5390-4F61-801C-1AED7FC3AA1C}</Project>
+      <Name>KariyerNET.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KariyerNET.Model\KariyerNET.Model.csproj">
+      <Project>{F211A3B0-33AC-42C7-98A3-0F41CAF774AC}</Project>
+      <Name>KariyerNET.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

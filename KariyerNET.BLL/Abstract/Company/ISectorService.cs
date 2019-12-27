@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KariyerNET.BLL
+namespace KariyerNET.BLL.Abstract.Company
 {
-    class Class1
-    {
-    }
+	public interface ISectorService: IBaseService<Model.Company.Sector>
+	{
+	}
 }
