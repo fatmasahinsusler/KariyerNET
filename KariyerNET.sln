@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KariyerNET.Model", "Kariyer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KariyerNET.DAL", "KariyerNET.DAL\KariyerNET.DAL.csproj", "{103D384A-5390-4F61-801C-1AED7FC3AA1C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KariyerNET.BLL", "KariyerNET.BLL\KariyerNET.BLL.csproj", "{7B9B3781-B1E2-4CA3-8D30-F26483C4E6C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{103D384A-5390-4F61-801C-1AED7FC3AA1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{103D384A-5390-4F61-801C-1AED7FC3AA1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{103D384A-5390-4F61-801C-1AED7FC3AA1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B9B3781-B1E2-4CA3-8D30-F26483C4E6C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B9B3781-B1E2-4CA3-8D30-F26483C4E6C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B9B3781-B1E2-4CA3-8D30-F26483C4E6C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B9B3781-B1E2-4CA3-8D30-F26483C4E6C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
