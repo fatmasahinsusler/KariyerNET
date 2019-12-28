@@ -15,34 +15,35 @@ namespace KariyerNET.BLL.Abstract.EmployeeSide
         {
             _examDAL = examDAL;
         }
-		public void Delete(Exam entity)
-		{
-			throw new NotImplementedException();
-		}
+        public void Delete(Exam entity)
+        {
+            _examDAL.Delete(entity);
+        }
 
-		public void DeleteById(int entityID)
-		{
-			throw new NotImplementedException();
-		}
+        public void DeleteById(int entityID)
+        {
+            var entity = _examDAL.Get(a => a.ID == entityID);
+            Delete(entity);
+        }
 
-		public Exam Get(int entityID)
-		{
-			throw new NotImplementedException();
-		}
+        public Exam Get(int entityID)
+        {
+            return _examDAL.Get(a => a.ID == entityID);
+        }
 
-		public ICollection<Exam> GetAll()
-		{
-			throw new NotImplementedException();
-		}
+        public ICollection<Exam> GetAll()
+        {
+            return _examDAL.GetAll();
+        }
 
-		public void Insert(Exam entity)
-		{
-			throw new NotImplementedException();
-		}
+        public void Insert(Exam entity)
+        {
+            _examDAL.Add(entity);
+        }
 
-		public void Update(Exam entity)
-		{
-			throw new NotImplementedException();
-		}
-	}
+        public void Update(Exam entity)
+        {
+            _examDAL.Update(entity);
+        }
+    }
 }

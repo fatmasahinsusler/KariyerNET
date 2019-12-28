@@ -16,34 +16,35 @@ namespace KariyerNET.BLL.Abstract.EmployeeSide
         {
             _perfectionDAL = perfectionDAL;
         }
-		public void Delete(Perfection entity)
-		{
-			throw new NotImplementedException();
-		}
+        public void Delete(Perfection entity)
+        {
+            _perfectionDAL.Delete(entity);
+        }
 
-		public void DeleteById(int entityID)
-		{
-			throw new NotImplementedException();
-		}
+        public void DeleteById(int entityID)
+        {
+            var entity = _perfectionDAL.Get(a => a.ID == entityID);
+            Delete(entity);
+        }
 
-		public Perfection Get(int entityID)
-		{
-			throw new NotImplementedException();
-		}
+        public Perfection Get(int entityID)
+        {
+            return _perfectionDAL.Get(a => a.ID == entityID);
+        }
 
-		public ICollection<Perfection> GetAll()
-		{
-			throw new NotImplementedException();
-		}
+        public ICollection<Perfection> GetAll()
+        {
+            return _perfectionDAL.GetAll();
+        }
 
-		public void Insert(Perfection entity)
-		{
-			throw new NotImplementedException();
-		}
+        public void Insert(Perfection entity)
+        {
+            _perfectionDAL.Add(entity);
+        }
 
-		public void Update(Perfection entity)
-		{
-			throw new NotImplementedException();
-		}
-	}
+        public void Update(Perfection entity)
+        {
+            _perfectionDAL.Update(entity);
+        }
+    }
 }

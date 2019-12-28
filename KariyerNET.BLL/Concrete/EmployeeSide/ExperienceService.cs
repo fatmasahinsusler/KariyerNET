@@ -15,34 +15,35 @@ namespace KariyerNET.BLL.Abstract.EmployeeSide
         {
             _experienceDAL = experienceDAL;
         }
-		public void Delete(Experience entity)
-		{
-			throw new NotImplementedException();
-		}
+        public void Delete(Experience entity)
+        {
+            _experienceDAL.Delete(entity);
+        }
 
-		public void DeleteById(int entityID)
-		{
-			throw new NotImplementedException();
-		}
+        public void DeleteById(int entityID)
+        {
+            var entity = _experienceDAL.Get(a => a.ID == entityID);
+            Delete(entity);
+        }
 
-		public Experience Get(int entityID)
-		{
-			throw new NotImplementedException();
-		}
+        public Experience Get(int entityID)
+        {
+            return _experienceDAL.Get(a => a.ID == entityID);
+        }
 
-		public ICollection<Experience> GetAll()
-		{
-			throw new NotImplementedException();
-		}
+        public ICollection<Experience> GetAll()
+        {
+            return _experienceDAL.GetAll();
+        }
 
-		public void Insert(Experience entity)
-		{
-			throw new NotImplementedException();
-		}
+        public void Insert(Experience entity)
+        {
+            _experienceDAL.Add(entity);
+        }
 
-		public void Update(Experience entity)
-		{
-			throw new NotImplementedException();
-		}
-	}
+        public void Update(Experience entity)
+        {
+            _experienceDAL.Update(entity);
+        }
+    }
 }

@@ -16,34 +16,35 @@ namespace KariyerNET.BLL.Abstract.EmployeeSide
         {
             _resumeDAL = resumeDAL;
         }
-		public void Delete(Resume entity)
-		{
-			throw new NotImplementedException();
-		}
+        public void Delete(Resume entity)
+        {
+            _resumeDAL.Delete(entity);
+        }
 
-		public void DeleteById(int entityID)
-		{
-			throw new NotImplementedException();
-		}
+        public void DeleteById(int entityID)
+        {
+            var entity = _resumeDAL.Get(a => a.ID == entityID);
+            Delete(entity);
+        }
 
-		public Resume Get(int entityID)
-		{
-			throw new NotImplementedException();
-		}
+        public Resume Get(int entityID)
+        {
+            return _resumeDAL.Get(a => a.ID == entityID);
+        }
 
-		public ICollection<Resume> GetAll()
-		{
-			throw new NotImplementedException();
-		}
+        public ICollection<Resume> GetAll()
+        {
+            return _resumeDAL.GetAll();
+        }
 
-		public void Insert(Resume entity)
-		{
-			throw new NotImplementedException();
-		}
+        public void Insert(Resume entity)
+        {
+            _resumeDAL.Add(entity);
+        }
 
-		public void Update(Resume entity)
-		{
-			throw new NotImplementedException();
-		}
-	}
+        public void Update(Resume entity)
+        {
+            _resumeDAL.Update(entity);
+        }
+    }
 }

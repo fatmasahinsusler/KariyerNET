@@ -16,34 +16,35 @@ namespace KariyerNET.BLL.Abstract.EmployeeSide
         {
             _languageDAL = languageDAL;
         }
-		public void Delete(Language entity)
-		{
-			throw new NotImplementedException();
-		}
+        public void Delete(Language entity)
+        {
+            _languageDAL.Delete(entity);
+        }
 
-		public void DeleteById(int entityID)
-		{
-			throw new NotImplementedException();
-		}
+        public void DeleteById(int entityID)
+        {
+            var entity = _languageDAL.Get(a => a.ID == entityID);
+            Delete(entity);
+        }
 
-		public Language Get(int entityID)
-		{
-			throw new NotImplementedException();
-		}
+        public Language Get(int entityID)
+        {
+            return _languageDAL.Get(a => a.ID == entityID);
+        }
 
-		public ICollection<Language> GetAll()
-		{
-			throw new NotImplementedException();
-		}
+        public ICollection<Language> GetAll()
+        {
+            return _languageDAL.GetAll();
+        }
 
-		public void Insert(Language entity)
-		{
-			throw new NotImplementedException();
-		}
+        public void Insert(Language entity)
+        {
+            _languageDAL.Add(entity);
+        }
 
-		public void Update(Language entity)
-		{
-			throw new NotImplementedException();
-		}
-	}
+        public void Update(Language entity)
+        {
+            _languageDAL.Update(entity);
+        }
+    }
 }

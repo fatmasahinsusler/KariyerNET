@@ -16,34 +16,35 @@ namespace KariyerNET.BLL.Abstract.EmployeeSide
         {
             _certificateDAL = certificateDAL;
         }
-		public void Delete(Certificate entity)
-		{
-			throw new NotImplementedException();
-		}
+        public void Delete(Certificate entity)
+        {
+            _certificateDAL.Delete(entity);
+        }
 
-		public void DeleteById(int entityID)
-		{
-			throw new NotImplementedException();
-		}
+        public void DeleteById(int entityID)
+        {
+            var entity = _certificateDAL.Get(a => a.ID == entityID);
+            Delete(entity);
+        }
 
-		public Certificate Get(int entityID)
-		{
-			throw new NotImplementedException();
-		}
+        public Certificate Get(int entityID)
+        {
+            return _certificateDAL.Get(a => a.ID == entityID);
+        }
 
-		public ICollection<Certificate> GetAll()
-		{
-			throw new NotImplementedException();
-		}
+        public ICollection<Certificate> GetAll()
+        {
+            return _certificateDAL.GetAll();
+        }
 
-		public void Insert(Certificate entity)
-		{
-			throw new NotImplementedException();
-		}
+        public void Insert(Certificate entity)
+        {
+            _certificateDAL.Add(entity);
+        }
 
-		public void Update(Certificate entity)
-		{
-			throw new NotImplementedException();
-		}
-	}
+        public void Update(Certificate entity)
+        {
+            _certificateDAL.Update(entity);
+        }
+    }
 }

@@ -15,34 +15,35 @@ namespace KariyerNET.BLL.Abstract.EmployeeSide
         {
             _hobbieDAL = hobbieDAL;
         }
-		public void Delete(Hobbie entity)
-		{
-			throw new NotImplementedException();
-		}
+        public void Delete(Hobbie entity)
+        {
+            _hobbieDAL.Delete(entity);
+        }
 
-		public void DeleteById(int entityID)
-		{
-			throw new NotImplementedException();
-		}
+        public void DeleteById(int entityID)
+        {
+            var entity = _hobbieDAL.Get(a => a.ID == entityID);
+            Delete(entity);
+        }
 
-		public Hobbie Get(int entityID)
-		{
-			throw new NotImplementedException();
-		}
+        public Hobbie Get(int entityID)
+        {
+            return _hobbieDAL.Get(a => a.ID == entityID);
+        }
 
-		public ICollection<Hobbie> GetAll()
-		{
-			throw new NotImplementedException();
-		}
+        public ICollection<Hobbie> GetAll()
+        {
+            return _hobbieDAL.GetAll();
+        }
 
-		public void Insert(Hobbie entity)
-		{
-			throw new NotImplementedException();
-		}
+        public void Insert(Hobbie entity)
+        {
+            _hobbieDAL.Add(entity);
+        }
 
-		public void Update(Hobbie entity)
-		{
-			throw new NotImplementedException();
-		}
-	}
+        public void Update(Hobbie entity)
+        {
+            _hobbieDAL.Update(entity);
+        }
+    }
 }

@@ -16,34 +16,35 @@ namespace KariyerNET.BLL.Abstract.EmployeeSide
         {
             _loginDAL = loginDAL;
         }
-		public void Delete(Login entity)
-		{
-			throw new NotImplementedException();
-		}
+        public void Delete(Login entity)
+        {
+            _loginDAL.Delete(entity);
+        }
 
-		public void DeleteById(int entityID)
-		{
-			throw new NotImplementedException();
-		}
+        public void DeleteById(int entityID)
+        {
+            var entity = _loginDAL.Get(a => a.ID == entityID);
+            Delete(entity);
+        }
 
-		public Login Get(int entityID)
-		{
-			throw new NotImplementedException();
-		}
+        public Login Get(int entityID)
+        {
+            return _loginDAL.Get(a => a.ID == entityID);
+        }
 
-		public ICollection<Login> GetAll()
-		{
-			throw new NotImplementedException();
-		}
+        public ICollection<Login> GetAll()
+        {
+            return _loginDAL.GetAll();
+        }
 
-		public void Insert(Login entity)
-		{
-			throw new NotImplementedException();
-		}
+        public void Insert(Login entity)
+        {
+            _loginDAL.Add(entity);
+        }
 
-		public void Update(Login entity)
-		{
-			throw new NotImplementedException();
-		}
-	}
+        public void Update(Login entity)
+        {
+            _loginDAL.Update(entity);
+        }
+    }
 }

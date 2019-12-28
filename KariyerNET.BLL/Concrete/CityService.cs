@@ -16,34 +16,35 @@ namespace KariyerNET.BLL.Abstract
         {
             _cityDAL = cityDAL;
         }
-		public void Delete(City entity)
-		{
-			throw new NotImplementedException();
-		}
+        public void Delete(City entity)
+        {
+            _cityDAL.Delete(entity);
+        }
 
-		public void DeleteById(int entityID)
-		{
-			throw new NotImplementedException();
-		}
+        public void DeleteById(int entityID)
+        {
+            var entity = _cityDAL.Get(a => a.ID == entityID);
+            Delete(entity);
+        }
 
-		public City Get(int entityID)
-		{
-			throw new NotImplementedException();
-		}
+        public City Get(int entityID)
+        {
+            return _cityDAL.Get(a => a.ID == entityID);
+        }
 
-		public ICollection<City> GetAll()
-		{
-			throw new NotImplementedException();
-		}
+        public ICollection<City> GetAll()
+        {
+            return _cityDAL.GetAll();
+        }
 
-		public void Insert(City entity)
-		{
-			throw new NotImplementedException();
-		}
+        public void Insert(City entity)
+        {
+            _cityDAL.Add(entity);
+        }
 
-		public void Update(City entity)
-		{
-			throw new NotImplementedException();
-		}
-	}
+        public void Update(City entity)
+        {
+            _cityDAL.Update(entity);
+        }
+    }
 }

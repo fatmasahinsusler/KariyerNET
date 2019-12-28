@@ -20,32 +20,33 @@ namespace KariyerNET.BLL.Concrete.CompanySide
 
         public void Delete(Sector entity)
         {
-            throw new NotImplementedException();
+            _sectorDAL.Delete(entity);
         }
 
         public void DeleteById(int entityID)
         {
-            throw new NotImplementedException();
+            var entity = _sectorDAL.Get(a => a.ID == entityID);
+            Delete(entity);
         }
 
         public Sector Get(int entityID)
         {
-            throw new NotImplementedException();
+            return _sectorDAL.Get(a => a.ID == entityID);
         }
 
         public ICollection<Sector> GetAll()
         {
-            throw new NotImplementedException();
+            return _sectorDAL.GetAll();
         }
 
         public void Insert(Sector entity)
         {
-            throw new NotImplementedException();
+            _sectorDAL.Add(entity);
         }
 
         public void Update(Sector entity)
         {
-            throw new NotImplementedException();
+            _sectorDAL.Update(entity);
         }
     }
 }

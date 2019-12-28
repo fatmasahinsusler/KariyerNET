@@ -20,32 +20,33 @@ namespace KariyerNET.BLL.Concrete.CompanySide
 
         public void Delete(JobAdvert entity)
         {
-            throw new NotImplementedException();
+            _jobAdvertDAL.Delete(entity);
         }
 
         public void DeleteById(int entityID)
         {
-            throw new NotImplementedException();
+            var entity = _jobAdvertDAL.Get(a => a.ID == entityID);
+            Delete(entity);
         }
 
         public JobAdvert Get(int entityID)
         {
-            throw new NotImplementedException();
+            return _jobAdvertDAL.Get(a => a.ID == entityID);
         }
 
         public ICollection<JobAdvert> GetAll()
         {
-            throw new NotImplementedException();
+            return _jobAdvertDAL.GetAll();
         }
 
         public void Insert(JobAdvert entity)
         {
-            throw new NotImplementedException();
+            _jobAdvertDAL.Add(entity);
         }
 
         public void Update(JobAdvert entity)
         {
-            throw new NotImplementedException();
+            _jobAdvertDAL.Update(entity);
         }
     }
 }
