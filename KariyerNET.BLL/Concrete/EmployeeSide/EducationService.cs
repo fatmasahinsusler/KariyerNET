@@ -47,6 +47,5 @@ namespace KariyerNET.BLL.Concrete.EmployeeSide
             _educationDAL.Update(entity);
         }
     }
-    {
-    }
+    
 }
