@@ -85,6 +85,8 @@
     <Compile Include="Concrete\EmployeeSide\ResumeRepository.cs" />
     <Compile Include="Concrete\KariyerNETDBContext.cs" />
     <Compile Include="Concrete\Mapping\CompanySide\CompanyMapping.cs" />
+    <Compile Include="Concrete\Mapping\CompanySide\JobAdvert.cs" />
+    <Compile Include="Concrete\Mapping\TownMapping.cs" />
     <Compile Include="Concrete\MyStrategy.cs" />
     <Compile Include="Concrete\TownRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

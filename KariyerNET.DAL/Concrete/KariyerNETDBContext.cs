@@ -4,6 +4,8 @@ using KariyerNET.Model.EmployeeSide;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Configuration;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,7 +37,9 @@ namespace KariyerNET.DAL.Concrete
         public DbSet<Town> Towns { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-           // modelBuilder.Configurations.Add(new);
+            // modelBuilder.Configurations.Add(new);
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>(); 
+           
         }
 
     }

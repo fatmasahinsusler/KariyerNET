@@ -13,8 +13,9 @@ namespace KariyerNET.Model
         public string TownName { get; set; }
 
         //Mapping
+        //public int CityID { get; set; } //TODO: Hocaya sorucaz.acınca patlıyor.
         public City City { get; set; }
-        public int CityID { get; set; }
+
         public List<JobAdvert> jobAdverts { get; set; }
 
     }
