@@ -1,4 +1,7 @@
-﻿using System;
+﻿using KariyerNET.Model;
+using KariyerNET.Model.CompanySide;
+using KariyerNET.Model.EmployeeSide;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -9,7 +12,27 @@ namespace KariyerNET.DAL.Concrete
 {
     public class KariyerNETDBContext : DbContext
     {
-        // TODO: BURASI DOLACAK DAHA !!!
+       
+        public KariyerNETDBContext():base("Server=.;Database=KariyetNetDB;Integrated Security=true;")
+        {
+
+        }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<JobAdvert> JobAdverts { get; set; }
+        public DbSet<Sector> Sectors { get; set; }
+        public DbSet<Certificate> Certificates { get; set; }
+        public DbSet<Education> Educations { get; set; }
+        public DbSet<Exam> Exams { get; set; }
+        public DbSet<ExamInfo> ExamInfos { get; set; }
+        public DbSet<Experience> Experiences { get; set; }
+        public DbSet<Hobbie> Hobbies { get; set; }
+        public DbSet<Language> Languages { get; set; }
+        public DbSet<Login> Logins { get; set; }
+        public DbSet<Perfection> Perfections { get; set; }
+        public DbSet<References> References { get; set; }
+        public DbSet<Resume> Resumes { get; set; }
+        public DbSet<City> Cities { get; set; }
+        public DbSet<Town> Towns { get; set; }
 
     }
 }
