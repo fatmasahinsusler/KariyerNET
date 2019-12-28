@@ -16,6 +16,7 @@ namespace KariyerNET.UI.MVC.App_Start
     using KariyerNET.BLL.Abstract.CompanySide;
     using KariyerNET.BLL.Concrete.CompanySide;
     using KariyerNET.BLL.Abstract.EmployeeSide;
+    using KariyerNET.BLL.Concrete.EmployeeSide;
 
     public static class NinjectWebCommon
     {

@@ -1,4 +1,5 @@
-﻿using KariyerNET.DAL.Abstract.EmployeeSide;
+﻿using KariyerNET.BLL.Abstract.EmployeeSide;
+using KariyerNET.DAL.Abstract.EmployeeSide;
 using KariyerNET.Model.EmployeeSide;
 using System;
 using System.Collections.Generic;
@@ -6,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KariyerNET.BLL.Abstract.EmployeeSide
+namespace KariyerNET.BLL.Concrete.EmployeeSide
 {
-	public class CertificateService : ICertificateService
-	{
+    public class CertificateService : ICertificateService
+    {
         ICertificateDAL _certificateDAL;
 
         public CertificateService(ICertificateDAL certificateDAL)
