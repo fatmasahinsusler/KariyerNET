@@ -30,8 +30,8 @@ namespace KariyerNET.Model.EmployeeSide
         public string Answer3C { get; set; }
         public string Answer3D { get; set; }
         public string CorrectAnswer3 { get; set; }
-        
 
+        public List<ExamInfo> ExamInfos { get; set; }
 
     }
 }

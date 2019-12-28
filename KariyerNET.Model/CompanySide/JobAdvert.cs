@@ -13,15 +13,21 @@ namespace KariyerNET.Model.CompanySide
         public string AdvertHead { get; set; }//ilan başlığı
         public string Title { get; set; } //pozisyon
         public string Description { get; set; }
-        public EducationLevel EducationLevel { get; set; }
-        public List<Perfection> Perfections { get; set; }
-        public List<Exam> Exams { get; set; }
+        public int NeededEmployeeCount { get; set; } // Pozisyon için alınacak kişi sayısı
         public bool IsExamNeeded { get; set; }
+        public int Experiences { get; set; }
+        public MilitaryState MilitaryState { get; set; }
+        public EducationLevel EducationLevel { get; set; }
+
+        //nav props
+        public List<Exam> Exams { get; set; }
         public List<Language> Languages { get; set; }
-        public List<Experience> Experiences { get; set; }
         public List<City> Cities { get; set; }
         public List<Town> Towns { get; set; }
-        public int NeededEmployeeCount { get; set; } // Pozisyon için alınacak kişi sayısı
-        public MilitaryState MilitaryState { get; set; }
+        public List<Perfection> Perfections { get; set; }
+        public int CompanyID { get; set; }
+        public Company Company { get; set; }
+        public List<Sector> Sectors { get; set; }
+        public List<Resume> Resumes { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using KariyerNET.Core.Entity;
+using KariyerNET.Model.CompanySide;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,9 @@ namespace KariyerNET.Model.EmployeeSide
         public Exam Exam { get; set; }
         public int LoginID { get; set; }
         public Login Login { get; set; } //User ID yerine loginID kullanılıyor
+        public Company Company { get; set; }
+        public int CompanyID { get; set; }
+
 
     }
     public enum ExamType

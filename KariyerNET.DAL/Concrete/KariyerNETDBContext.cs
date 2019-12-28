@@ -15,7 +15,7 @@ namespace KariyerNET.DAL.Concrete
        
         public KariyerNETDBContext():base("Server=.;Database=KariyetNetDB;Integrated Security=true;")
         {
-
+            Database.SetInitializer<KariyerNETDBContext>(new MyStrategy());
         }
         public DbSet<Company> Companies { get; set; }
         public DbSet<JobAdvert> JobAdverts { get; set; }
@@ -33,6 +33,10 @@ namespace KariyerNET.DAL.Concrete
         public DbSet<Resume> Resumes { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Town> Towns { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+           // modelBuilder.Configurations.Add(new);
+        }
 
     }
 }
