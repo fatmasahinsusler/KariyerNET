@@ -1,9 +1,9 @@
 ﻿using KariyerNET.DAL.Abstract;
-using KariyerNET.DAL.Abstract.Firma;
-using KariyerNET.DAL.Abstract.Employee;
+using KariyerNET.DAL.Abstract.CompanySide;
+using KariyerNET.DAL.Abstract.EmployeeSide;
 using KariyerNET.DAL.Concrete;
-using KariyerNET.DAL.Concrete.Firma;
-using KariyerNET.DAL.Concrete.Employee;
+using KariyerNET.DAL.Concrete.CompanySide;
+using KariyerNET.DAL.Concrete.EmployeeSide;
 using Ninject.Modules;
 using System;
 using System.Collections.Generic;

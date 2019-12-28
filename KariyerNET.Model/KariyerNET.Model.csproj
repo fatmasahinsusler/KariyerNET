@@ -43,21 +43,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="City.cs" />
-    <Compile Include="Firma\Company.cs" />
-    <Compile Include="Firma\JobAdvert.cs" />
-    <Compile Include="Firma\Sector.cs" />
-    <Compile Include="Employee\Certificate.cs" />
-    <Compile Include="Employee\Education.cs" />
-    <Compile Include="Employee\Exam.cs" />
-    <Compile Include="Employee\ExamInfo.cs" />
-    <Compile Include="Employee\Experience.cs" />
-    <Compile Include="Employee\Hobbie.cs" />
-    <Compile Include="Employee\Language.cs" />
-    <Compile Include="Employee\Login.cs" />
-    <Compile Include="Employee\Perfection.cs" />
+    <Compile Include="CompanySide\Company.cs" />
+    <Compile Include="CompanySide\JobAdvert.cs" />
+    <Compile Include="CompanySide\Sector.cs" />
+    <Compile Include="EmployeeSide\Certificate.cs" />
+    <Compile Include="EmployeeSide\Education.cs" />
+    <Compile Include="EmployeeSide\Exam.cs" />
+    <Compile Include="EmployeeSide\ExamInfo.cs" />
+    <Compile Include="EmployeeSide\Experience.cs" />
+    <Compile Include="EmployeeSide\Hobbie.cs" />
+    <Compile Include="EmployeeSide\Language.cs" />
+    <Compile Include="EmployeeSide\Login.cs" />
+    <Compile Include="EmployeeSide\Perfection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Employee\References.cs" />
-    <Compile Include="Employee\Resume.cs" />
+    <Compile Include="EmployeeSide\References.cs" />
+    <Compile Include="EmployeeSide\Resume.cs" />
     <Compile Include="Town.cs" />
   </ItemGroup>
   <ItemGroup>
