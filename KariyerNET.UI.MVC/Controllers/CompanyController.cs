@@ -1,6 +1,7 @@
 ﻿using KariyerNET.BLL.Abstract.CompanySide;
 using KariyerNET.Model.CompanySide;
 using KariyerNET.UI.MVC.CustomFilter;
+using KariyerNET.UI.MVC.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace KariyerNET.UI.MVC.Controllers
     public class CompanyController : Controller
     {
         ICompanyService _companyService;
+
         public CompanyController(ICompanyService companyService)
         {
             _companyService = companyService;
@@ -36,7 +38,7 @@ namespace KariyerNET.UI.MVC.Controllers
             if (gelenKullanici != null)
             {
                 Session["user"] = gelenKullanici;
-                return RedirectToAction("Index", "Home");//babanın evine git:D
+                return RedirectToAction("Index", "Home"); //babanın evine git:D
             }
             
             else
@@ -50,6 +52,7 @@ namespace KariyerNET.UI.MVC.Controllers
         [HttpGet]
         public ActionResult Register()
         {
+            
             return View();
         }
 
@@ -71,11 +74,32 @@ namespace KariyerNET.UI.MVC.Controllers
             //    return View();
 
             //}
-
+            ViewBag.Message = "Kayıt oluşturuldu";
             return RedirectToAction("Login", "Company");
         }
 
+        [HttpGet]
+        public ActionResult ForgetPassword()
+        {
+            return View();
+        }
 
+        //[HttpPost]
+        //public ActionResult ForgetPassword(int companyID)
+        //{            
+        // 
+        //Bu sayfa açılırken kullanıcı ID'sini view'den alması lazım yada maile göre Id getiren bir metod yazıcaz bll'de. Halledicez koçlarr 
 
+        //    var kullanici = _companyService.Get(companyID);
+
+        //    bool sonuc = MailHelper.SendConfirmationMail(kullanici.EMail,kullanici.CompanyName,kullanici.Password);
+        //    if (!sonuc)
+        //    {
+        //        ViewBag.Error = "Mail gönderilemedi, daha sonra tekrar deneyiniz.";
+        //        return View();
+        //    }
+        //    return View();
+        //}
+        
     }
 }

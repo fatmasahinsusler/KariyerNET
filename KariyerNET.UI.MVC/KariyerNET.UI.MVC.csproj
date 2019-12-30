@@ -234,6 +234,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\MailHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -257,6 +258,7 @@
     <Content Include="Views\Company\Login.cshtml" />
     <Content Include="Views\Company\Register.cshtml" />
     <Content Include="Views\Employee\Register.cshtml" />
+    <Content Include="Views\Company\ForgetPassword.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

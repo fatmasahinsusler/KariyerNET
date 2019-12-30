@@ -27,7 +27,7 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active">
-						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+						<a class="nav-link" href="~/Views/Home/Index.cshtml">AnaSayfa <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">Link</a>
@@ -60,7 +60,7 @@
 	<div class="container body-content">
 		@RenderBody()
 
-		<footer class="fixed-bottom text-center container ">
+		<footer class="text-center container ">
 			<hr />
 			@Html.ActionLink("Hakkımızda", "#", "#", new { @class = "d-inline-block col-1" })
 			@Html.ActionLink("İlan Yayımla", "#", "#", new { @class = "d-inline-block col-2" })
@@ -69,9 +69,9 @@
 			@Html.ActionLink("İletişim", "#", "#", new { @class = "d-inline-block col-1" })
 			@Html.ActionLink("  Yardım", "#", "#", new { @class = "far fa-question-circle d-inline-block col-2" })
 			<div class="col-2 d-inline-block">
-				<a href="#"><i class="fab fa-twitter mr-2" style="font-size:22px;color:black"></i></a>
-				<a href="#"><i class="fab fa-facebook-square mr-2" style="font-size:22px;color:black"></i></a>
-				<a href="#"><i class="fab fa-instagram mr-2" style="font-size:22px;color:black"></i></a>
+				<a href="#"><i class="fab fa-twitter mr-2"  style="font-size:22px;color:black"></i></a>
+				<a href="#"><i class="fab fa-facebook-square mr-2 " style="font-size:22px;color:black"></i></a>
+				<a href="#"><i class="fab fa-instagram mr-2 " data-toggle="button" style="font-size:22px;color:black"></i></a>
 			</div>
 			<hr />
 		</footer>
@@ -80,5 +80,6 @@
 	<script src="~/Scripts/jquery-3.0.0.min.js"></script>
 	<script src="~/Scripts/popper-utils.min.js"></script>
 	<script src="~/Scripts/bootstrap.min.js"></script>
+
 </body>
 </html>
