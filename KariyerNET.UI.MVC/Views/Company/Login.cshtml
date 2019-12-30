@@ -1,0 +1,37 @@
+﻿@model KariyerNET.Model.CompanySide.Company
+@{
+    ViewBag.Title = "Giriş Yap";
+}
+    <div class="container">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <h2>HR DANISMANLIK UYE GIRISI</h2>
+                Yeni kariyer hedefinde doğru yerdesin...
+            </div>
+
+            <div class="form-group">
+                <label>E-Posta Adresi:</label>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(a => a.EMail, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Parola:</label>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(a => a.Password, new { @class = "form-control", type = "password" })
+            </div>
+            <div class="form-group">
+                <button type="submit">Giriş Yap</button>&nbsp;
+                @*@Html.ActionLink("Şifremi Unuttum","")    Bir adet şifremi unuttum sayfası tasarlanıcak*@
+                <label class=" alert-link">@Html.ActionLink("Üye Ol!", "Login", "Company")</label>
+            </div>
+
+        }
+    </div>
+
+
+
+
+

@@ -30,16 +30,16 @@ namespace KariyerNET.UI.MVC.Controllers
 		//	return View(user);
 		//}
 
-        public ActionResult EmployeeLogin()
-        {
-            return View();
-        }
+        //public ActionResult EmployeeLogin()
+        //{
+        //    return View();
+        //}
 
-        ////[CustomFilter()]
-        public ActionResult JobAdvertPage()
-        {
-            return View();
-        }
+        //////[CustomFilter()]
+        //public ActionResult JobAdvertPage()
+        //{
+        //    return View();
+        //}
 
 
   

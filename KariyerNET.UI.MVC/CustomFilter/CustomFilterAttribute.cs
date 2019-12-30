@@ -10,14 +10,16 @@ namespace KariyerNET.UI.MVC.CustomFilter
 {
     public class CustomFilterAttribute : ActionFilterAttribute
     {
-        public string LoginMail { get; set; }
-        public string Password { get; set; }
+        //public string LoginMail { get; set; }
+        //public string Password { get; set; }
 
-        public CustomFilterAttribute(string mail,string password)
-        {
-            LoginMail = mail;
-            Password = password;
-        }
+        //public CustomFilterAttribute(string mail,string password)
+        //{
+        //    LoginMail = mail;
+        //    Password = password;
+        //}
+
+            //CustomFilter'in bir parametre almasına gerek yok. Metodu direkt calıstırır. Hocaya soruldu :)
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             Login user = null;
