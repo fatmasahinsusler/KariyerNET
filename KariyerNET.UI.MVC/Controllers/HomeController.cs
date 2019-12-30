@@ -19,27 +19,10 @@ namespace KariyerNET.UI.MVC.Controllers
            
         }
 
-		//public ActionResult Index()
-		//{
-  //          Login user = new Login()
-  //          {
-  //              LoginMail = "askoyazilim@mail.com",
-  //              Password = "1234"
-  //          };
-  //          _loginService.Insert(user);
-		//	return View(user);
-		//}
-
-        //public ActionResult EmployeeLogin()
-        //{
-        //    return View();
-        //}
-
-        //////[CustomFilter()]
-        //public ActionResult JobAdvertPage()
-        //{
-        //    return View();
-        //}
+		public ActionResult Index()
+        {
+            return View();
+        }
 
 
   

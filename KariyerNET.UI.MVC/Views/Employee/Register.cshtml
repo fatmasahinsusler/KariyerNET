@@ -1,0 +1,42 @@
+﻿@model  KariyerNET.Model.EmployeeSide.Login
+@{
+    ViewBag.Title = "Register";
+}
+
+<div class="container">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <h2>Şimdi Üye Olma Zamanı</h2>
+            Yeni kariyer hedefinde doğru yerdesin...
+        </div>
+        <div class="form-group">
+            <label>İsim:</label>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(a => a.FirstName, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Soyad:</label>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(a => a.SurName, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label>E-Posta Adresi:</label>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(a => a.LoginMail, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Parola:</label>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(a => a.Password, new { @class = "form-control", type = "password" })
+        </div>
+        <div class="form-group">
+            <button type="submit">Üye Ol</button>&nbsp;
+            @* Sözleşmeyi okudum yapmak istiyorsak eğer yazalım. *@
+        </div>
+
+    }
+</div>

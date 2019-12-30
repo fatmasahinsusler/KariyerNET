@@ -35,7 +35,7 @@ namespace KariyerNET.UI.MVC.Controllers
             var gelenKullanici = _companyService.Get(company.ID);
             if (gelenKullanici != null)
             {
-                Session["Kullanici"] = gelenKullanici;
+                Session["user"] = gelenKullanici;
                 return RedirectToAction("Index", "Home");
             }
             

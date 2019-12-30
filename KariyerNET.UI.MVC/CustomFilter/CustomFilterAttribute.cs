@@ -29,7 +29,7 @@ namespace KariyerNET.UI.MVC.CustomFilter
             }
             else
             {
-                filterContext.Result = new RedirectResult("/Home/EmployeeLogin");
+                filterContext.Result = new RedirectResult("/Home/Index");// login sayfasını yaz gitsin.
             }
         }
     }
