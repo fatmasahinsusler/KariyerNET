@@ -42,6 +42,6 @@ namespace KariyerNET.UI.MVC.Controllers
         }
 
 
-        
+  
 	}
 }
