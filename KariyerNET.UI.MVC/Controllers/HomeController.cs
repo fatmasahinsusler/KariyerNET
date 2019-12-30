@@ -22,7 +22,7 @@ namespace KariyerNET.UI.MVC.Controllers
                 LoginMail = "askoyazilim@mail.com",
                 Password = "1234"
             };
-            _loginService.Insert(user);
+            //_loginService.Insert(user);
 			return View(user);
 		}
         
