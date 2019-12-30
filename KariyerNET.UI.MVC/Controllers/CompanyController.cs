@@ -12,7 +12,6 @@ namespace KariyerNET.UI.MVC.Controllers
     public class CompanyController : Controller
     {
         ICompanyService _companyService;
-
         public CompanyController(ICompanyService companyService)
         {
             _companyService = companyService;
@@ -27,6 +26,7 @@ namespace KariyerNET.UI.MVC.Controllers
         {
             return View();
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         [CustomFilter()]
@@ -38,9 +38,13 @@ namespace KariyerNET.UI.MVC.Controllers
                 Session["Kullanici"] = gelenKullanici;
                 return RedirectToAction("Index", "Home");
             }
-            //Else yapılacak 
-            ViewBag.Error = "Kullanıcı Bulunamadı, Lütfen Üye Olunuz!";
-            return View();
+            
+            else
+            {
+                ViewBag.Error = "Kullanıcı Bulunamadı, Lütfen Üye Olunuz!";
+                return View();
+            }
+           
         }
 
         [HttpGet]
@@ -55,11 +59,10 @@ namespace KariyerNET.UI.MVC.Controllers
         {
             //Burası tamamlanacak.
 
-
             //try
             //{
             //    _companyService.Insert(company);
-            //    //Eğer 
+            //    //Eğer company içi doluysa kayıt tamamlnıp Viewe gitsin
             //    return View();
             //}
             //catch (Exception ex)
