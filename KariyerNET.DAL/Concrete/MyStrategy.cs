@@ -11,7 +11,15 @@ namespace KariyerNET.DAL.Concrete
 	{
 		protected override void Seed(KariyerNETDBContext context)
 		{
-			
+			context.Companies.Add(new Model.CompanySide.Company()
+			{
+				EMail="aşkoyazilim@mail.com",
+				Password="123",
+				CompanyName="Aşko Yazılım",
+				Address="Çengelköy"
+			});
+
+			context.SaveChanges();
 		}
 	}
 }

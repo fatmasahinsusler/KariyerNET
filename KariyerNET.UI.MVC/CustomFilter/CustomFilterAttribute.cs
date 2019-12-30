@@ -10,7 +10,7 @@ namespace KariyerNET.UI.MVC.CustomFilter
 {
     public class CustomFilterAttribute : ActionFilterAttribute
     {
-      
+       
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             Login user = null;

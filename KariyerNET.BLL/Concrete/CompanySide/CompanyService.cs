@@ -9,44 +9,59 @@ using System.Threading.Tasks;
 
 namespace KariyerNET.BLL.Concrete.CompanySide
 {
-    public class CompanyService : ICompanyService
-    {
-        ICompanyDAL _companyDAL;
+	public class CompanyService : ICompanyService
+	{
+		ICompanyDAL _companyDAL;
 
-        public CompanyService(ICompanyDAL CompanyDAL)
-        {
-            _companyDAL = CompanyDAL;
-        }
+		public CompanyService(ICompanyDAL CompanyDAL)
+		{
+			_companyDAL = CompanyDAL;
+		}
 
-        public void Delete(Company entity)
-        {
-            _companyDAL.Delete(entity);
-        }
+		public Company CompanyLogin(string mail, string password)
+		{
+			if (_companyDAL.Get(a => a.EMail == mail) != null)
+			{
+				if (_companyDAL.Get(a => a.EMail == mail).Password == password)
+				{
+					return _companyDAL.Get(a => a.EMail == mail);
+				}
+			}
+			return null;
+		}
 
-        public void DeleteById(int entityID)
-        {
-            var entity = _companyDAL.Get(a => a.ID == entityID);
-            Delete(entity);
-        }
+		public void Delete(Company entity)
+		{
+			_companyDAL.Delete(entity);
+		}
 
-        public Company Get(int entityID)
-        {
-          return _companyDAL.Get(a => a.ID == entityID);
-        }
+		public void DeleteById(int entityID)
+		{
+			var entity = _companyDAL.Get(a => a.ID == entityID);
+			Delete(entity);
+		}
 
-        public ICollection<Company> GetAll()
-        {
-            return _companyDAL.GetAll();
-        }
+		public Company Get(int entityID)
+		{
+			return _companyDAL.Get(a => a.ID == entityID);
+		}
 
-        public void Insert(Company entity)
-        {
-            _companyDAL.Add(entity);
-        }
+		public ICollection<Company> GetAll()
+		{
+			return _companyDAL.GetAll();
+		}
 
-        public void Update(Company entity)
-        {
-            _companyDAL.Update(entity);
-        }
-    }
+		public void Insert(Company entity)
+		{
+			_companyDAL.Add(entity);
+		}
+
+		public void Update(Company entity)
+		{
+			_companyDAL.Update(entity);
+		}
+
+
+
+	}
 }

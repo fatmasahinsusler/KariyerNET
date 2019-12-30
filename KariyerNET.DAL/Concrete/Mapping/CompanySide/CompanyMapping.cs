@@ -12,7 +12,7 @@ namespace KariyerNET.DAL.Concrete.Mapping.CompanySide
 	{
 		public CompanyMapping()
 		{
-			Property(p => p.UserName).HasMaxLength(50).IsRequired();
+			//Property(p => p.UserName).HasMaxLength(50).IsRequired();
 			Property(p => p.Password).HasMaxLength(16).IsRequired();
 			Property(p => p.CompanyName).HasMaxLength(100).IsRequired();
 			Property(p => p.LogoURL).HasMaxLength(16).IsRequired();

@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace KariyerNET.BLL.Abstract.CompanySide
 {
-    public interface ICompanyService : IBaseService<Company>
-    {
-    }
+	public interface ICompanyService : IBaseService<Company>
+	{
+		Company CompanyLogin(string mail, string password);
+	}
 }

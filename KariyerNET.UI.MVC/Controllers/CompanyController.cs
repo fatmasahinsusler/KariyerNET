@@ -29,14 +29,14 @@ namespace KariyerNET.UI.MVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [CustomFilter()]
+        //[CustomFilter()]
         public ActionResult Login(Company company)
         {
-            var gelenKullanici = _companyService.Get(company.ID);
+            var gelenKullanici = _companyService.CompanyLogin(company.EMail,company.Password);
             if (gelenKullanici != null)
             {
                 Session["user"] = gelenKullanici;
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Home");//babanın evine git:D
             }
             
             else

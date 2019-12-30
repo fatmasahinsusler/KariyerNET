@@ -9,7 +9,7 @@ namespace KariyerNET.Model.CompanySide
 {
     public class Company : BaseEntity
     {
-        public string UserName { get; set; }
+        //public string UserName { get; set; } // E posta ile girsin
         public string Password { get; set; }
         public string CompanyName { get; set; }
         public string LogoURL { get; set; }

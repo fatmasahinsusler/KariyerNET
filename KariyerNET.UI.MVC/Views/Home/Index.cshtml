@@ -1,7 +1,15 @@
-﻿
+﻿@using KariyerNET.Model.CompanySide
 @{
-    ViewBag.Title = "Index";
+	ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
+@{
+	if (Session["user"]!=null)
+	{
+		Company user = Session["user"] as Company;
+		<h1>@user.CompanyName</h1>
+	}
+
+}
