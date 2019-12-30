@@ -14,9 +14,9 @@ namespace KariyerNET.Model
 
         //Mapping
         //public int CityID { get; set; } //TODO: Hocaya sorucaz.acınca patlıyor.
-        public City City { get; set; }
+        public virtual City City { get; set; }
 
-        public List<JobAdvert> jobAdverts { get; set; }
+        public virtual List<JobAdvert> jobAdverts { get; set; }
 
     }
 }

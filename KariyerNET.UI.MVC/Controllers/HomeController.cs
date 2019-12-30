@@ -9,10 +9,22 @@ using System.Web.Mvc;
 namespace KariyerNET.UI.MVC.Controllers
 {
 	public class HomeController : Controller
-	{	
+	{
+        ILoginService _loginService;
+        public HomeController(ILoginService loginservice)
+        {
+            _loginService = loginservice;
+        }
 		public ActionResult Index()
 		{
-			return View();
+            Login user = new Login()
+            {
+                LoginMail = "askoyazilim@mail.com",
+                Password = "1234"
+            };
+            _loginService.Insert(user);
+			return View(user);
 		}
+        
 	}
 }

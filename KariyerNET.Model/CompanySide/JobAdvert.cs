@@ -20,14 +20,14 @@ namespace KariyerNET.Model.CompanySide
         public EducationLevel EducationLevel { get; set; }
 
         //nav props
-        public List<Exam> Exams { get; set; }
-        public List<Language> Languages { get; set; }
-        public List<City> Cities { get; set; }
-        public List<Town> Towns { get; set; }
-        public List<Perfection> Perfections { get; set; }
-        public int CompanyID { get; set; }
-        public Company Company { get; set; }
-        public List<Sector> Sectors { get; set; }
-        public List<Resume> Resumes { get; set; }
+        public virtual List<Exam> Exams { get; set; }
+        public virtual List<Language> Languages { get; set; }
+        public virtual List<City> Cities { get; set; }
+        public virtual List<Town> Towns { get; set; }
+        public virtual List<Perfection> Perfections { get; set; }
+        public virtual int CompanyID { get; set; }
+        public virtual Company Company { get; set; }
+        public virtual List<Sector> Sectors { get; set; }
+        public virtual List<Resume> Resumes { get; set; }
     }
 }

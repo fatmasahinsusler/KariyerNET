@@ -13,9 +13,7 @@ namespace KariyerNET.Model.EmployeeSide
         public string LanguageLevel { get; set; }
 
         //nav prop
-        public int ResumeID { get; set; }
-
-
-        public Resume Resume { get; set; }
+        public virtual int ResumeID { get; set; }
+        public virtual Resume Resume { get; set; }
     }
 }

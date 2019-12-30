@@ -18,13 +18,12 @@ namespace KariyerNET.Model.EmployeeSide
         public DateTime CompletedDate { get; set; } // tamamlanma tarihi
 
         //mapping 
-        public int ExamID { get; set; }
-
-        public Exam Exam { get; set; }
-        public int LoginID { get; set; }
-        public Login Login { get; set; } //User ID yerine loginID kullanılıyor
-        public Company Company { get; set; }
-        public int CompanyID { get; set; }
+        public virtual int ExamID { get; set; }
+        public virtual Exam Exam { get; set; }
+        public virtual int LoginID { get; set; }
+        public virtual Login Login { get; set; } //User ID yerine loginID kullanılıyor
+        public virtual Company Company { get; set; }
+        public virtual int CompanyID { get; set; }
 
 
     }

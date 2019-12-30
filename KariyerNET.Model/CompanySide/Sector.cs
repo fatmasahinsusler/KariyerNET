@@ -12,8 +12,8 @@ namespace KariyerNET.Model.CompanySide
         public string SectorName { get; set; }
 
         //nav props
-        public List<Company> Companies { get; set; }
-        public List<JobAdvert> JobAdverts { get; set; }
+        public virtual List<Company> Companies { get; set; }
+        public virtual List<JobAdvert> JobAdverts { get; set; }
 
 
     }

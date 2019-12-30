@@ -11,8 +11,8 @@ namespace KariyerNET.Model
   public  class City:BaseEntity
     {
         public string CityName { get; set; }
-        public List<Town> Towns { get; set; }      
-        public List<JobAdvert> jobAdverts { get; set; }
+        public virtual List<Town> Towns { get; set; }      
+        public virtual List<JobAdvert> jobAdverts { get; set; }
 
     }
 }

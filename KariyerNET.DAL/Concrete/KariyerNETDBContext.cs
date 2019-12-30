@@ -15,7 +15,7 @@ namespace KariyerNET.DAL.Concrete
     public class KariyerNETDBContext : DbContext
     {
        
-        public KariyerNETDBContext():base("Server=.;Database=KariyetNetDB;Integrated Security=true;")
+        public KariyerNETDBContext():base("Server=.;Database=KariyetNetDB;UID=sa;PWD=123;")//Integrated Security=true;
         {
             Database.SetInitializer<KariyerNETDBContext>(new MyStrategy());
         }

@@ -12,7 +12,7 @@ namespace KariyerNET.DAL.Concrete.Mapping
 	{
 		public TownMapping()
 		{
-			//HasRequired(a => a.City).WithMany(a => a.Towns).HasForeignKey(a => a.CityID);
+			//HasRequired(a => a.City).WithMany(a => a.Towns).HasForeignKey(a => a.CityID).WillCascadeOnDelete();
 			
 
 

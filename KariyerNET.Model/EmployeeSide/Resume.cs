@@ -28,12 +28,12 @@ namespace KariyerNET.Model.EmployeeSide
         public MilitaryState MilitaryState { get; set; }
 
         //mapping
-        public Login Login { get; set; }
-        public int LoginID { get; set; } //User ID yerine loginID kullanılıyor
-        public City City { get; set; }
-        public int CityID { get; set; }
-        public Town Town { get; set; }
-        public int TownID { get; set; }
+        public virtual Login Login { get; set; }
+        public virtual int LoginID { get; set; } //User ID yerine loginID kullanılıyor
+        public virtual City City { get; set; }
+        public virtual int CityID { get; set; }
+        public virtual Town Town { get; set; }
+        public virtual int TownID { get; set; }
 
     }
     public enum DrivingLicense

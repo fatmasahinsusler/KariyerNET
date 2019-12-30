@@ -19,8 +19,8 @@ namespace KariyerNET.Model.EmployeeSide
 
         //mapping
 
-        public int ResumeID { get; set; }
-        public Resume Resume { get; set; }
+        public virtual int ResumeID { get; set; }
+        public virtual Resume Resume { get; set; }
 
 
 

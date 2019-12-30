@@ -19,9 +19,9 @@ namespace KariyerNET.Model.CompanySide
 
         //mapping
 
-        public List<Sector> Sectors { get; set; }
+        public virtual List<Sector> Sectors { get; set; }
 
-        public List<JobAdvert> Adverts { get; set; }
+        public virtual List<JobAdvert> Adverts { get; set; }
 
     }
 }

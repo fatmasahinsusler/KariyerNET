@@ -18,7 +18,7 @@ namespace KariyerNET.Model.EmployeeSide
         public string LeavingReason { get; set; } // ayrılma nedeni
 
         //nav prop
-        public int ResumeID { get; set; }
-        public Resume Resume { get; set; }
+        public virtual int ResumeID { get; set; }
+        public virtual Resume Resume { get; set; }
     }
 }
