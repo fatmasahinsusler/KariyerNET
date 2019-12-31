@@ -1,13 +1,15 @@
-﻿@model  KariyerNET.Model.EmployeeSide.Login
+﻿@model KariyerNET.Model.EmployeeSide.Login
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Giriş Yap";
 }
-
 <div class="container">
     <div class="offset-3 col-6 p-5">
+        @Html.ValidationSummary()
+
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
+
             <div class="form-group w-100 text-center">
                 <h2>HR DANIŞMANLIK ÜYE GİRİŞİ</h2>
                 <br />
@@ -15,16 +17,7 @@
                 <br />
                 <br />
             </div>
-            <div class="form-group w-100">
-                <span class="text-dark">Ad (*)</span>
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.TextBoxFor(a => a.FirstName, new { @class = "form-control col-md-12", type = "mail", placeholder = "Adınızı giriniz..." })
-            </div>
-            <div class="form-group w-100">
-                <span class="text-dark">Soyad (*)</span>
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.TextBoxFor(a => a.SurName, new { @class = "form-control col-md-12", type = "mail", placeholder = "Soyadınızı giriniz..." })
-            </div>
+
             <div class="form-group w-100">
                 <span class="text-dark">E-Mail</span>
                 @Html.ValidationSummary(true, "Geçerli bir e posta adresi giriniz...", new { @class = "text-danger" })
@@ -36,12 +29,25 @@
                 @Html.TextBoxFor(a => a.Password, new { @class = "form-control col-md-12", type = "password", placeholder = "Şifrenizi giriniz..." })
             </div>
             <div class="form-group w-100">
-                <button type="submit" class="btn btn-success w-100 mt-3">Üye Ol</button>
-                @Html.ActionLink("Şifremi unuttum.","ForgetPassword","Employee" , new { @class="btn btn-primary w-100 mt-2"})   
-                <button type="submit" class = "btn btn-primary w-100 mt-2">Giriş Yap</button>
-                
+                <button type="submit" class="btn btn-success w-100 mt-3">Giriş Yap</button>
+                @Html.ActionLink("Şifremi Unuttum", "ForgetPassword", "Company", new { @class = "btn btn-primary w-100 mt-3" })
+                @Html.ActionLink("Üye Ol!", "Register", "Company", new { @class = "btn btn-primary w-100 mt-3" })
+
             </div>
         }
 
+        @{
+            if (ViewBag.Error != null)
+            {
+                <div class="alert-danger">
+                    @ViewBag.Error
+                </div>
+            }
+        }
     </div>
 </div>
+
+
+
+
+

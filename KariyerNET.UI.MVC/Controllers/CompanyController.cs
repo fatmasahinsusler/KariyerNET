@@ -84,22 +84,22 @@ namespace KariyerNET.UI.MVC.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public ActionResult ForgetPassword(int companyID)
-        //{            
-        // 
-        //Bu sayfa açılırken kullanıcı ID'sini view'den alması lazım yada maile göre Id getiren bir metod yazıcaz bll'de. Halledicez koçlarr 
+        [HttpPost]
+        public ActionResult ForgetPassword(int companyID)
+        {
 
-        //    var kullanici = _companyService.Get(companyID);
+          //  Bu sayfa açılırken kullanıcı ID'sini view'den alması lazım yada maile göre Id getiren bir metod yazıcaz bll'de. Halledicez koçlarr 
 
-        //    bool sonuc = MailHelper.SendConfirmationMail(kullanici.EMail,kullanici.CompanyName,kullanici.Password);
-        //    if (!sonuc)
-        //    {
-        //        ViewBag.Error = "Mail gönderilemedi, daha sonra tekrar deneyiniz.";
-        //        return View();
-        //    }
-        //    return View();
-        //}
-        
+            var kullanici = _companyService.Get(companyID);
+
+            bool sonuc = MailHelper.SendConfirmationMail(kullanici.EMail, kullanici.CompanyName, kullanici.Password);
+            if (!sonuc)
+            {
+                ViewBag.Error = "Mail gönderilemedi, daha sonra tekrar deneyiniz.";
+                return View();
+            }
+            return RedirectToAction("Login", "Company");
+        }
+
     }
 }

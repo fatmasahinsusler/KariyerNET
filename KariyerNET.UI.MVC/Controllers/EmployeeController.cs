@@ -41,7 +41,35 @@ namespace KariyerNET.UI.MVC.Controllers
 
             //}
 
-            return RedirectToAction("","");
+            return RedirectToAction("Login", "Employee"); //Login sayfası yazılacak.
+        }
+        [HttpGet]
+        public ActionResult ForgetPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ForgetPassword(int companyID)
+        {
+
+            //  Bu sayfa açılırken kullanıcı ID'sini view'den alması lazım yada maile göre Id getiren bir metod yazıcaz bll'de. Halledicez koçlarr 
+
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        //[CustomFilter()]
+        public ActionResult Login(Login login)
+        {
+            return View();
+
         }
     }
 }
