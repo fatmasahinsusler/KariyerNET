@@ -18,8 +18,7 @@ namespace KariyerNET.UI.MVC.Controllers
             _loginService = loginservice;
            
         }
-
-		public ActionResult Index()
+        public ActionResult Index()
         {
             return View();
         }

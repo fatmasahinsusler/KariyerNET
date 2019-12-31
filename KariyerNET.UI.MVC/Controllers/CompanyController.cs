@@ -24,14 +24,14 @@ namespace KariyerNET.UI.MVC.Controllers
         }
 
         [HttpGet]
+        [IsLoginFilter()]
         public ActionResult Login()
         {
             return View();
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        //[CustomFilter()]
+        [ValidateAntiForgeryToken]      
         public ActionResult Login(Company company)
         {
             var gelenKullanici = _companyService.CompanyLogin(company.EMail,company.Password);
@@ -39,20 +39,16 @@ namespace KariyerNET.UI.MVC.Controllers
             {
                 Session["user"] = gelenKullanici;
                 return RedirectToAction("Index", "Home"); //babanın evine git:D
-            }
-            
-            else
-            {
+            }            
                 ViewBag.Error = "Kullanıcı Bulunamadı, Lütfen Üye Olunuz!";
-                return View();
-            }
-           
+                return View();           
         }
+
+
 
         [HttpGet]
         public ActionResult Register()
-        {
-            
+        { 
             return View();
         }
 
@@ -60,38 +56,33 @@ namespace KariyerNET.UI.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(Company company)
         {
-            //Burası tamamlanacak.
-
-            //try
-            //{
-            //    _companyService.Insert(company);
-            //    //Eğer company içi doluysa kayıt tamamlnıp Viewe gitsin
-            //    return View();
-            //}
-            //catch (Exception ex)
-            //{
-            //    ViewBag.Error = "Kayıt olma hatası!";
-            //    return View();
-
-            //}
-            ViewBag.Message = "Kayıt oluşturuldu";
-            return RedirectToAction("Login", "Company");
+            
+            try
+            {
+                _companyService.Insert(company);
+                ViewBag.Message = "Kayıt oluşturuldu";
+                return RedirectToAction("Login", "Company");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+                return View();
+            }
+           
+           
         }
+
+
 
         [HttpGet]
         public ActionResult ForgetPassword()
         {
             return View();
         }
-
         [HttpPost]
         public ActionResult ForgetPassword(int companyID)
         {
-
-          //  Bu sayfa açılırken kullanıcı ID'sini view'den alması lazım yada maile göre Id getiren bir metod yazıcaz bll'de. Halledicez koçlarr 
-
             var kullanici = _companyService.Get(companyID);
-
             bool sonuc = MailHelper.SendConfirmationMail(kullanici.EMail, kullanici.CompanyName, kullanici.Password);
             if (!sonuc)
             {

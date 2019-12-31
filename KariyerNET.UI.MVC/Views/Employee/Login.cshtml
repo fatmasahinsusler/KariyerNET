@@ -4,8 +4,15 @@
 }
 <div class="container">
     <div class="offset-3 col-6 p-5">
+        @{
+            if (ViewBag.Message != null)
+            {
+                <div class="alert-success">
+                    @ViewBag.Message
+                </div>
+            }
+        }
         @Html.ValidationSummary()
-
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()

@@ -5,11 +5,21 @@
 
 <div class="container">
     <div class="offset-3 col-6 p-5">
+        @Html.ValidationSummary()
+        @{
+            if (ViewBag.Message != null)
+            {
+                <div class="alert-success">
+                    @ViewBag.Message
+                </div>
+            }
+        }
+
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
             <div class="form-group w-100 text-center">
-                <h2>HR DANIŞMANLIK ÜYE OLMA EKRANINA HOŞGELDİNİZ</h2>
+                <h2>HR DANIŞMANLIK FİRMA - ÜYE OLMA EKRANINA HOŞGELDİNİZ</h2>
                 <br />
                 <span class="text-primary" style="font-weight:bold">Yeni takım arkadaşları mı arıyorsunuz? Doğru yerdesiniz...</span>
                 <br />
@@ -17,37 +27,44 @@
             </div>
             <div class="form-group w-100">
                 <span class="text-dark">Şirket Adı (*)</span>
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.TextBoxFor(a => a.CompanyName, new { @class = "form-control col-md-12", placeholder = " Şirket adınızı giriniz..." })
+                @Html.ValidationSummary(true, "Şirket adı boş geçilemez...", new { @class = "text-danger" })
+                @Html.EditorFor(a => a.CompanyName, new { htmlAttributes = new { @class = "form-control col-md-12", type = "text", placeholder = "Şirket adınızı giriniz..." } })
+                @Html.ValidationMessageFor(model => model.CompanyName, " ", new { @class = "text-danger" })
             </div>
             <div class="form-group w-100">
                 <span class="text-dark">Logonuz (*)</span><br />
-                <input type="file" class="form-control-file" id="exampleFormControlFile1" accept="image/x-png,image/gif,image/jpeg" >
+                @Html.TextBoxFor(a => a.LogoURL, new { @class = "form-control col-md-12", placeholder = "Adres bilgilerinizi giriniz" })
+
+                @*<input type="file" class="form-control-file" id="exampleFormControlFile1" accept="image/x-png,image/gif,image/jpeg" >*@
             </div>
             <div class="form-group w-100">
                 <span class="text-dark">Adres(*)</span>
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.TextBoxFor(a => a.Address, new { @class = "form-control col-md-12", placeholder = "Adres bilgilerinizi giriniz" })
+                @Html.ValidationSummary(true, "Adres bilgisi boş geçilemez", new { @class = "text-danger" })
+                @Html.EditorFor(a => a.Address, new { htmlAttributes = new { @class = "form-control col-md-12", type = "text", placeholder = "Adres bilgilerinzi giriniz..." } })
+                @Html.ValidationMessageFor(model => model.Address, " ", new { @class = "text-danger" })
             </div>
 
             <div class="form-group w-100">
                 <span class="text-dark">Telefon(*)</span>
-                @Html.ValidationSummary(true, "İletişim bilgileri boş geçilemez.", new { @class = "text-danger" })
-                @Html.TextBoxFor(a => a.Password, new { @class = "form-control col-md-12", type = "number", placeholder = "İletişim bilgilerinizi giriniz..." })
+                @Html.ValidationSummary(true, "Telefon bilgisi boş geçilemez", new { @class = "text-danger" })
+                @Html.EditorFor(a => a.Phone, new { htmlAttributes = new { @class = "form-control col-md-12", type = "text", placeholder = "Telefon bilgilerinzi giriniz..." } })
+                @Html.ValidationMessageFor(model => model.Phone, " ", new { @class = "text-danger" })
             </div>
             <div class="form-group w-100">
                 <span class="text-dark">E-Mail(*)</span>
-                @Html.ValidationSummary(true, "Parola boş geçilemez...", new { @class = "text-danger" })
-                @Html.TextBoxFor(a => a.Password, new { @class = "form-control col-md-12", type = "mail", placeholder = "Mailinizi giriniz..." })
+                @Html.ValidationSummary(true, "E-Posta bilgisi boş geçilemez", new { @class = "text-danger" })
+                @Html.EditorFor(a => a.EMail, new { htmlAttributes = new { @class = "form-control col-md-12", type = "mail", placeholder = "E-Posta bilgilerinzi giriniz..." } })
+                @Html.ValidationMessageFor(model => model.EMail, " ", new { @class = "text-danger" })
             </div>
             <div class="form-group w-100">
-                <span class="text-dark">Şifre(*)</span>
-                @Html.ValidationSummary(true, "Şifre boş geçilemez", new { @class = "text-danger" })
-                @Html.TextBoxFor(a => a.Password, new { @class = "form-control col-md-12", type = "mail", placeholder = "Şifrenizi giriniz..." })
+                <span class="text-dark">Parola(*)</span>
+                @Html.ValidationSummary(true, "Şifre bilgisi boş geçilemez", new { @class = "text-danger" })
+                @Html.EditorFor(a => a.Password, new { htmlAttributes = new { @class = "form-control col-md-12", type = "password", placeholder = "Şifrenizi giriniz..." } })
+                @Html.ValidationMessageFor(model => model.Password, " ", new { @class = "text-danger" })
             </div>
 
             <div class="form-group w-100">
-                <button type="submit" class = "btn btn-success w-100 mt-2" >Kayıt Ol!</button>
+                <button type="submit" class="btn btn-success w-100 mt-2">Kayıt Ol!</button>
             </div>
         }
 

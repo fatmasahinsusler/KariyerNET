@@ -47,5 +47,21 @@ namespace KariyerNET.BLL.Concrete.EmployeeSide
         {
             _loginDAL.Update(entity);
         }
+        public Login GetLogin(string loginMail) //Şifremi unuttum için Get metod yaptık, maile göre login getircek
+        {
+            return _loginDAL.Get(a => a.LoginMail == loginMail);
+        }
+
+        public Login GetUser(string mail, string password)
+        {
+            if (_loginDAL.Get(a => a.LoginMail == mail) != null)
+            {
+                if (_loginDAL.Get(a => a.LoginMail == mail).Password == password)
+                {
+                    return _loginDAL.Get(a => a.LoginMail == mail);
+                }
+            }
+            return null;
+        }
     }
 }
