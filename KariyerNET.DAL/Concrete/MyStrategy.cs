@@ -16,7 +16,9 @@ namespace KariyerNET.DAL.Concrete
 				EMail="aşkoyazilim@mail.com",
 				Password="123",
 				CompanyName="Aşko Yazılım",
-				Address="Çengelköy"
+				Address="Çengelköy",
+                LogoURL="kdfjkd",
+                Phone="5476876758"
 			});
 
 			context.SaveChanges();

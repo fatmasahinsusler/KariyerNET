@@ -1,4 +1,5 @@
-﻿using KariyerNET.Model;
+﻿using KariyerNET.DAL.Concrete.Mapping.CompanySide;
+using KariyerNET.Model;
 using KariyerNET.Model.CompanySide;
 using KariyerNET.Model.EmployeeSide;
 using System;
@@ -38,7 +39,8 @@ namespace KariyerNET.DAL.Concrete
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             // modelBuilder.Configurations.Add(new);
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>(); 
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Configurations.Add(new CompanyMapping());
            
         }
 

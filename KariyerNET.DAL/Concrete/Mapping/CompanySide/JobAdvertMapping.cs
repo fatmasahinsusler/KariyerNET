@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace KariyerNET.DAL.Concrete.Mapping.CompanySide
 {
-	public class JobAdvert: EntityTypeConfiguration<Company>
+	public class JobAdvertMapping: EntityTypeConfiguration<Company>
 	{
-		public JobAdvert()
+		public JobAdvertMapping()
 		{
 			//Property()
 		}

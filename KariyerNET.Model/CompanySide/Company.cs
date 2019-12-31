@@ -1,6 +1,7 @@
 ﻿using KariyerNET.Core.Entity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace KariyerNET.Model.CompanySide
         public string LogoURL { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
+        [EmailAddress]
         public string EMail { get; set; }
 
         //mapping
