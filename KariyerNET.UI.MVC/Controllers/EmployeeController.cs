@@ -1,4 +1,6 @@
-﻿using KariyerNET.Model.EmployeeSide;
+﻿using KariyerNET.BLL.Abstract.EmployeeSide;
+using KariyerNET.BLL.Concrete.EmployeeSide;
+using KariyerNET.Model.EmployeeSide;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +12,11 @@ namespace KariyerNET.UI.MVC.Controllers
     public class EmployeeController : Controller
     {
         // GET: Employee
+        ILoginService _loginService;
+        public EmployeeController(ILoginService loginService)
+        {
+            _loginService = loginService;
+        }
         public ActionResult Index()
         {
             return View();
@@ -25,6 +32,16 @@ namespace KariyerNET.UI.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(Login user)
         {
+            try
+            {
+                _loginService.Insert(user);
+                return RedirectToAction("Index", "Home");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+                return View();
+            }
             //Burası tamamlanacak.
 
             //try
