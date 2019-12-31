@@ -2,48 +2,51 @@
 @{
     ViewBag.Title = "Giriş Yap";
 }
-    <div class="container">
-        <div class="offset-3 col-6 p-5">
-            @using (Html.BeginForm())
+<div class="container">
+    <div class="offset-3 col-6 p-5">
+        @Html.ValidationSummary()
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-group w-100 text-center">
+                <h2>HR DANIŞMANLIK ÜYE GİRİŞİ</h2>
+                <br />
+                <span class="text-primary" style="font-weight:bold">Yeni kariyer hedefinde doğru yerdesin...</span>
+                <br />
+                <br />
+            </div>
+
+            <div class="form-group w-100">
+                <span class="text-dark">E-Mail</span>
+                @Html.ValidationSummary(true, "Geçerli bir e posta adresi giriniz...", new { @class = "text-danger" })
+                @Html.TextBoxFor(a => a.EMail, new { @class = "form-control col-md-12", type = "mail", placeholder = "E-posta adresinizi giriniz..." })
+            </div>
+            <div class="form-group w-100">
+                <span class="text-dark">Şifre</span>
+                @Html.ValidationSummary(true, "Parola boş geçilemez...", new { @class = "text-danger" })
+                @Html.TextBoxFor(a => a.Password, new { @class = "form-control col-md-12", type = "password", placeholder = "Şifrenizi giriniz..." })
+            </div>
+            <div class="form-group w-100">
+                <button type="submit" class="btn btn-success w-100 mt-3">Giriş Yap</button>
+                @*@Html.ActionLink("Giriş Yap!", "Login", "Company", new { @class = "btn btn-success w-100 mt-3" })*@
+                @Html.ActionLink("Şifremi Unuttum", "ForgetPassword", "Company", new { @class = "btn btn-primary w-100 mt-3" })
+                @Html.ActionLink("Üye Ol!", "Register", "Company", new { @class = "btn btn-primary w-100 mt-3" })
+
+            </div>
+        }
+
+        @{
+            if (ViewBag.Error != null)
             {
-                @Html.AntiForgeryToken()
-                <div class="form-group w-100 text-center">
-                    <h2>HR DANIŞMANLIK ÜYE GİRİŞİ</h2>
-					<br />
-                    <span class="text-primary" style="font-weight:bold">Yeni kariyer hedefinde doğru yerdesin...</span>
-					<br />
-					<br />
-                </div>
-
-                <div class="form-group w-100">
-                    <span class="text-dark">E-Mail</span>
-                    @Html.ValidationSummary(true, "Geçerli bir e posta adresi giriniz...", new { @class = "text-danger" })
-                    @Html.TextBoxFor(a => a.EMail, new { @class = "form-control col-md-12", type = "mail", placeholder="E-posta adresinizi giriniz..." })
-                </div>
-                <div class="form-group w-100">
-                    <span class="text-dark">Şifre</span>
-                    @Html.ValidationSummary(true, "Parola boş geçilemez...", new { @class = "text-danger" })
-                    @Html.TextBoxFor(a => a.Password, new { @class = "form-control col-md-12", type = "password" ,placeholder="Şifrenizi giriniz..." })
-                </div>
-                <div class="form-group w-100">
-
-                    @Html.ActionLink("Giriş Yap!", "Login", "Company", new { @class = "btn btn-success w-100 mt-3" })
-                    @Html.ActionLink("Şifremi Unuttum", "ForgetPassword", "Company", new { @class = "btn btn-primary w-100 mt-3" })
-                    @Html.ActionLink("Üye Ol!", "Register", "Company", new { @class = "btn btn-primary w-100 mt-3" })
-
+                <div class="alert-danger">
+                    @ViewBag.Error
                 </div>
             }
-
-            @{
-                if (ViewBag.Error != null)
-                {
-                    <div class="alert-danger">
-                        @ViewBag.Error
-                    </div>
-                }
-            }
-        </div>
+        }
     </div>
+</div>
 
 
 
