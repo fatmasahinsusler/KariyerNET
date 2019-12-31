@@ -24,7 +24,11 @@ namespace KariyerNET.UI.MVC.Controllers
             return View();
         }
 
-
+        public ActionResult LogOut()
+        {
+            Session["user"] = null;
+            return RedirectToAction("Index");
+        }
   
 	}
 }
