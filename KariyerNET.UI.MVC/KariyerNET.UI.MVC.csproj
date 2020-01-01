@@ -265,9 +265,10 @@
     <Content Include="Views\Employee\Login.cshtml" />
     <Content Include="Views\Company\PublishedJobAdvert.cshtml" />
     <Content Include="Views\JobAdvert\Index.cshtml" />
-    <Content Include="Views\JobAdvert\BeforeApply.cshtml" />
     <Content Include="Views\Shared\_RightSide.cshtml" />
     <Content Include="Views\Shared\_Layout_JobAdvert.cshtml" />
+    <Content Include="Views\JobAdvert\BeforeApply.cshtml" />
+    <Content Include="Views\JobAdvert\AfterApply.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

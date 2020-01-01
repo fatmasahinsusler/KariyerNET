@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container w-50 h-auto mb-5" >
+<div class="container w-50 h-auto mb-5">
     <div class="form-group text-center" style="background-color:#e3f2fd;">
         <br />
         <div class="form-group  text-center" id="applyGraphic">
@@ -28,6 +28,6 @@
         <br />
     </div>
     <div class="form group text-center mt-2 " id="applyButton">
-        <button type="submit" class="btn btn-danger w-50">Başvuruyu Tamamla</button>
+        @Html.ActionLink("Başvuruyu Tamamla", "AfterApply", "JobAdvert", new { @class = "btn btn-danger w-50" })
     </div>
 </div>

@@ -39,16 +39,30 @@ namespace KariyerNET.UI.MVC.Controllers
 
 
         //}
-        public ActionResult BeforeApply(Login login)
+        [HttpGet]
+        public ActionResult BeforeApply()
         {
-            var gelenKullanici = _loginService.GetUser(login.LoginMail, login.Password); 
-            if (gelenKullanici != null)
-            {
-                Session["user"] = gelenKullanici;
-                return RedirectToAction("BeforeApply", "JobAdvert");
-            }
-            ViewBag.Error = "Giriş yapınız!";
-            return RedirectToAction("Login", "Employee");
+            return View();
+        }
+
+        //[HttpPost]
+        //public ActionResult BeforeApply(Login login)
+        //{
+        //    var gelenKullanici = _loginService.GetUser(login.LoginMail, login.Password);
+        //    if (gelenKullanici != null)
+        //    {
+        //        Session["user"] = gelenKullanici;
+        //        return RedirectToAction("BeforeForApply", "JobAdvert");
+        //    }
+        //    ViewBag.Error = "Giriş yapınız!";
+        //    return RedirectToAction("Login", "Employee");
+        //}
+
+
+        [HttpGet]
+        public ActionResult AfterApply()
+        {
+            return View();
         }
     }
 }
