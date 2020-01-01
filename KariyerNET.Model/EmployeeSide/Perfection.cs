@@ -12,7 +12,6 @@ namespace KariyerNET.Model.EmployeeSide
         //Yetkinlik
         public string PerfectionName { get; set; }
         //nav prop
-        public virtual int ResumeID { get; set; }
-        public virtual Resume Resume{ get; set; }
+        public virtual List<Resume> Resume{ get; set; }
     }
 }
