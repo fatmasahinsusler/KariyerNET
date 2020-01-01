@@ -38,11 +38,12 @@
 					{
 						if (Session["user"] is Company)
 						{
-							<span class="mr-2">@((Session["user"] as Company).CompanyName) olarak giriş yaptınız...</span>
+							<span class="mr-2 text-muted">@((Session["user"] as Company).CompanyName.ToUpper()) olarak giriş yaptınız...</span>
+							@Html.ActionLink("İlan Yayınla", "PublishedJobAdvert", "Company", null, new { @class = "btn btn-outline-success my-2 my-sm-0 mr-2" })
 						}
 						else
 						{
-							<span class="mr-2">@((Session["user"] as Login).FirstName + " " + (Session["user"] as Login).SurName) olarak giriş yaptınız...</span>
+							<span class="mr-2">@((Session["user"] as Login).FirstName.ToUpper() + " " + (Session["user"] as Login).SurName.ToUpper()) olarak giriş yaptınız...</span>
 						}
 						@Html.ActionLink("Çıkış Yap", "LogOut", "Home", null, new { @class = "btn btn-outline-danger my-2 my-sm-0 mr-2" })
 					}

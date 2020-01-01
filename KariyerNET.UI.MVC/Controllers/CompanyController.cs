@@ -20,12 +20,13 @@ namespace KariyerNET.UI.MVC.Controllers
         IPerfectionService _perfectionService;
         IJobAdvertService _jobAdvertService;
 
-        public CompanyController(ICompanyService companyService, ITownService townService, ICityService cityService, IPerfectionService perfectionService)
+        public CompanyController(ICompanyService companyService, ITownService townService, ICityService cityService, IPerfectionService perfectionService, IJobAdvertService jobAdvertService)
         {
             _companyService = companyService;
             _townService = townService;
             _cityService = cityService;
             _perfectionService = perfectionService;
+            _jobAdvertService = jobAdvertService;
         }
         public ActionResult Index()
         {
