@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "İlana Başvur";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="form-group w-50 text-center" id="jobTitle">
+        <span class="text-dark"  style="font-weight:bold; background-color: #e3f2fd; width:150px !important;">İlan Adı</span>
+    </div><br />
+    <div class="form-group w-50 text-center alert-light" id="advertPhoto">
+        <img src="https://via.placeholder.com/500x250" />
+    </div><br />
+
+    <div class="form-group w-50  alert-light" id="jobDescription">
+        <span class="text-dark"> İlan Açıklaması</span>
+        <hr />
+        <span class="text-capitalize">
+           ( DB'den gelecekkk)<br />
+            ksdlfjlk sdjfkldsjfkjdkf jklsdjfklsd jflksdjf ksdlfjlk sdjfkldsjfkjdkf jklsdjfklsd jflksdjf ksdlfjlk sdjfkldsjfkjdkf jklsdjfklsd jflksdjf ksdlfjlk sdjfkldsjfkjdkf jklsdjfklsd jflksdjf ksdlfjlk sdjfkldsjfkjdkf jklsdjfklsd jflksdjf ksdlfjlk sdjfkldsjfkjdkf jklsdjfklsd jflksdjf ksdlfjlk sdjfkldsjfkjdkf jklsdjfklsd jflksdjf ksdlfjlk sdjfkldsjfkjdkf jklsdjfklsd jflksdjf ksdlfjlk sdjfkldsjfkjdkf jklsdjfklsd jflksdjf ksdlfjlk sdjfkldsjfkjdkf jk
+        </span>
+    </div>
+
+    <div class="form-group w-50 alert-light" id="jobDetails">
+        <span class="text-dark "> Pozisyon Bilgileri</span><hr />
+        <table>
+            <tr>
+                <td>Tecrübe</td>
+                <td>:</td>
+                <td>2 yıl (DB'den gelecek)</td>
+            </tr>
+            <tr>
+                <td>Eğitim Seviyesi</td>
+                <td>:</td>
+                <td>Üniversite (DB'den gelecek)</td>
+            </tr>
+            <tr>
+                <td>Pozisyon seviyesi</td>
+                <td>:</td>
+                <td>En az 2 yıl (DB'den gelecek)</td>
+            </tr>
+            <tr>
+                <td>Çalışma Şekli</td>
+                <td>:</td>
+                <td>Tam Zamanlı (DB'den gelecek)</td>
+            </tr>
+            <tr>
+                <td>Alınacak Personel Sayısı</td>
+                <td>:</td>
+                <td>5 (DB'den gelecek)</td>
+            </tr>
+            <tr>
+                <td>Şehir</td>
+                <td>:</td>
+                <td>İstanbul Avrupa (DB'den gelecek)</td>
+            </tr>
+            <tr>
+            <td><hr /></td>
+            <td><hr /></td>
+            <td><hr /></td>
+            </tr>
+            <tr>
+                <td>İlan Yayınlanma Tarihi</td>
+                <td>:</td>
+                <td>gg/aa/yyy (İlan oluşturulma tarihi DB'den geleblir)</td>
+            </tr>
+            <tr>
+                <td>İlan Bitiş Tarihi</td>
+                <td>:</td>
+                <td>gg/aa/yyy (İlan sonlandırılma tarihi DB'den geleblir)</td>
+            </tr>
+        </table>
+
+    </div><br />
+
+          <div class="form-group w-50 alert-light" id="applyButton">
+              @Html.ActionLink("Başvurmak İçin Giriş Yap", "BeforeApply", "JobAdvert", new { @class = "btn btn-danger w-100 mt-3" })
+              <div id="hasUser" class="form-group w-10 alert-light" style="margin-left:70%;">
+                  <button type="submit" class="btn btn-warning w-auto ml-1 mt-3 visible">Kaydet</button>
+                  <button type="submit" class="btn btn-success w-auto ml-1 mt-3 visible">Başvur</button>
+              </div>
+          </div><br />
+
+</div>
+
