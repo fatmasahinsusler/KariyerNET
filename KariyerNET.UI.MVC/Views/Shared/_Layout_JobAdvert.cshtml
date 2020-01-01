@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - HR DANISMANLIK </title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #e3f2fd;">
+        <div class="container">
+            <a class="navbar-brand" href="/home/index">
+                <img src="~/Content/image/logo.png" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav mr-auto">
+                    <li class="nav-item">
+                        @Html.ActionLink("Ana Sayfa", "Index", "Home", null, new { @class = "nav-link active font-weight-bold text-black" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("İş Ara", "Index", "Home", null, new { @class = "nav-link active font-weight-bold text-black-50" })
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    @if (Session["user"] == null)
+                    {
+                        @Html.ActionLink("Firma Girişi", "Login", "Company", null, new { @class = "btn btn-outline-success my-2 my-sm-0 mr-2" })
+                        @Html.ActionLink("Aday Girişi", "Login", "Employee", null, new { @class = "btn btn-outline-success my-2 my-sm-0" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Çıkış Yap", "LogOut", "Home", null, new { @class = "btn btn-outline-danger my-2 my-sm-0 mr-2" })
+                    }
+
+                </form>
+            </div>
+        </div>
+    </nav>
+    <br /><br /><br />
+
+
+    <div class="body-content">
+        <div class="float-left col-md-9">
+            @RenderBody()
+        </div>
+        @{Html.RenderPartial("_RightSide");}
+    </div>
+    <footer class="text-center container d-block">
+        <hr />
+        @Html.ActionLink("Hakkımızda", "#", "#", new { @class = "d-inline-block col-1" })
+        @Html.ActionLink("İlan Yayımla", "#", "#", new { @class = "d-inline-block col-2" })
+        @Html.ActionLink("Politikalar", "#", "#", new { @class = "d-inline-block col-1" })
+        @Html.ActionLink("Reklam Ver", "#", "#", new { @class = "d-inline-block col-2" })
+        @Html.ActionLink("İletişim", "#", "#", new { @class = "d-inline-block col-1" })
+        @Html.ActionLink("  Yardım", "#", "#", new { @class = "far fa-question-circle d-inline-block col-2" })
+        <div class="col-2 d-inline-block">
+            <a href="#"><i class="fab fa-twitter mr-2" style="font-size:22px;color:black"></i></a>
+            <a href="#"><i class="fab fa-facebook-square mr-2 " style="font-size:22px;color:black"></i></a>
+            <a href="#"><i class="fab fa-instagram mr-2 " data-toggle="button" style="font-size:22px;color:black"></i></a>
+        </div>
+        <hr />
+    </footer>
+
+    @*//  <script src="~/Scripts/jquery-3.0.0.min.js"></script>*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js" integrity="sha256-sPB0F50YUDK0otDnsfNHawYmA5M0pjjUf4TvRJkGFrI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js" integrity="sha256-9GycpJnliUjJDVDqP0UEu/bsm9U+3dnQUH8+3W10vkY=" crossorigin="anonymous"></script>
+    <script src="~/Scripts/popper-utils.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+</body>
+</html>
