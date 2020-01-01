@@ -1,4 +1,6 @@
-﻿using KariyerNET.BLL.Abstract.CompanySide;
+﻿using KariyerNET.BLL.Abstract;
+using KariyerNET.BLL.Abstract.CompanySide;
+using KariyerNET.BLL.Abstract.EmployeeSide;
 using KariyerNET.Model.CompanySide;
 using KariyerNET.UI.MVC.CustomFilter;
 using KariyerNET.UI.MVC.Tools;
@@ -13,10 +15,18 @@ namespace KariyerNET.UI.MVC.Controllers
     public class CompanyController : Controller
     {
         ICompanyService _companyService;
+        ICityService _cityService;
+        ITownService _townService;
+        IPerfectionService _perfectionService;
+        IJobAdvertService _jobAdvertService;
 
-        public CompanyController(ICompanyService companyService)
+        public CompanyController(ICompanyService companyService, ITownService townService, ICityService cityService, IPerfectionService perfectionService, IJobAdvertService jobAdvertService)
         {
             _companyService = companyService;
+            _townService = townService;
+            _cityService = cityService;
+            _perfectionService = perfectionService;
+            _jobAdvertService = jobAdvertService;
         }
         public ActionResult Index()
         {
@@ -90,6 +100,33 @@ namespace KariyerNET.UI.MVC.Controllers
                 return View();
             }
             return RedirectToAction("Login", "Company");
+        }
+
+
+
+        [HttpGet]
+        public ActionResult PublishedJobAdvert()
+        {          
+            ViewBag.Iller = _cityService.GetAll();            
+            ViewBag.Ilce = _townService.GetAll();            
+            ViewBag.Yetenekler = _perfectionService.GetAll();            
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult PublishedJobAdvert(JobAdvert jobAdvert)
+        {
+            try
+            {
+                _jobAdvertService.Insert(jobAdvert);
+                ViewBag.Message = "İlan yayınlandı.";
+                return RedirectToAction("Index", "Home");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+                return View();
+            }          
         }
 
     }

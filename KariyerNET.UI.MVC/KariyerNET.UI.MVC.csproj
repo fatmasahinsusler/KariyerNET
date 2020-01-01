@@ -230,7 +230,6 @@
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\JobAdvertController.cs" />
     <Compile Include="CustomFilter\IsLoginFilterAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -263,8 +262,9 @@
     <Content Include="Views\Company\ForgetPassword.cshtml" />
     <Content Include="Views\Employee\ForgetPassword.cshtml" />
     <Content Include="Views\Employee\Login.cshtml" />
-    <Content Include="Views\JobAdvert\Index.cshtml" />
-    <Content Include="Views\JobAdvert\BeforeApply.cshtml" />
+    <Content Include="Views\Company\PublishedJobAdvert.cshtml" />
+    <Content Include="Views\Shared\_RightSide.cshtml" />
+    <Content Include="Views\Shared\_Layout_JobAdvert.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
