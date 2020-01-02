@@ -118,7 +118,13 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\image\done-tick.gif" />
+    <Content Include="Content\image\gra.jpg" />
     <Content Include="Content\image\HR-ICON.ico" />
+    <Content Include="Content\image\ilan1.png" />
+    <Content Include="Content\image\ilan2.png" />
+    <Content Include="Content\image\ilan3.png" />
+    <Content Include="Content\image\ilan4.png" />
     <Content Include="Content\image\logo.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
