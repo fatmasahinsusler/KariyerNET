@@ -3,122 +3,134 @@
 @model  KariyerNET.Model.CompanySide.JobAdvert
 
 @{
-	ViewBag.Title = "İlan Yayınla";
+    ViewBag.Title = "İlan Yayınla";
 }
 
 <div class="container">
-	<div class="offset-3 col-6 p-5">
-		@Html.ValidationSummary()
-		@{
-			if (ViewBag.Message != null)
-			{
-				<div class="alert-success">
-					@ViewBag.Message
-				</div>
-			}
-		}
+    <div class="offset-3 col-6 p-5">
+        @Html.ValidationSummary()
+        @{
+            if (ViewBag.Message != null)
+            {
+                <div class="alert-success">
+                    @ViewBag.Message
+                </div>
+            }
+        }
 
-		@using (Html.BeginForm())
-		{
-			@Html.AntiForgeryToken()
-			<div class="form-group w-100 text-center">
-				<h2>YENİ EKİP ARKADAŞLARINLA TANIŞMAK İÇİN SABIRSIZLANIYOR MUSUN?</h2>
-				<br />
-				<span class="text-primary" style="font-weight:bold">O zaman.Doğru yerdesiniz...</span>
-				<br />
-				<br />
-			</div>
-			<div class="form-group w-100">
-				<span class="text-dark">İlan No(*)</span>
-				@Html.ValidationSummary(true, "İlan no boş geçilemez..", new { @class = "text-danger" })
-				@Html.EditorFor(a => a.ID, new { htmlAttributes = new { @class = "form-control col-md-12", type = "text" } })
-				@Html.ValidationMessageFor(model => model.ID, "İlan no boş geçilemez..", new { @class = "text-danger" })
-			</div>
-			<div class="form-group w-100">
-				<span class="text-dark">Pozisyon Adı (*)</span>
-				@Html.EditorFor(a => a.AdvertHead, new { htmlAttributes = new { @class = "form-control col-md-12 ", type = "text", column = "5" } })
-				@Html.ValidationMessageFor(model => model.AdvertHead, "İlan adı boş geçilemez..", new { @class = "text-danger" })
-			</div>
-			<div class="form-group w-100">
-				<span class="text-dark">Açıklama(*)</span>
-				@Html.EditorFor(a => a.Description, new { htmlAttributes = new { @class = "form-control col-md-12 textarea", type = "textarea" } })
-				@Html.ValidationMessageFor(model => model.Description, "Açıklama alanı boş geçilemez.. ", new { @class = "text-danger" })
-			</div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group w-100 text-center">
+                <h2>YENİ EKİP ARKADAŞLARINLA TANIŞMAK İÇİN SABIRSIZLANIYOR MUSUN?</h2>
+                <br />
+                <span class="text-primary" style="font-weight:bold">O zaman.Doğru yerdesiniz...</span>
+                <br />
+                <br />
+            </div>
+            <div class="form-group w-100">
+                <span class="text-dark">İlan No(*)</span>
+                @Html.ValidationSummary(true, "İlan no boş geçilemez..", new { @class = "text-danger" })
+                @Html.EditorFor(a => a.ID, new { htmlAttributes = new { @class = "form-control col-md-12", type = "text" } })
+                @Html.ValidationMessageFor(model => model.ID, "İlan no boş geçilemez..", new { @class = "text-danger" })
+            </div>
+            <div class="form-group w-100">
+                <span class="text-dark">Pozisyon Adı (*)</span>
+                @Html.EditorFor(a => a.AdvertHead, new { htmlAttributes = new { @class = "form-control col-md-12 ", type = "text", column = "5" } })
+                @Html.ValidationMessageFor(model => model.AdvertHead, "İlan adı boş geçilemez..", new { @class = "text-danger" })
+            </div>
+            <div class="form-group w-100">
+                <span class="text-dark">Açıklama(*)</span>
+                @Html.EditorFor(a => a.Description, new { htmlAttributes = new { @class = "form-control col-md-12 textarea", type = "textarea" } })
+                @Html.ValidationMessageFor(model => model.Description, "Açıklama alanı boş geçilemez.. ", new { @class = "text-danger" })
+            </div>
 
-			<div class="form-group w-100">
-				<span class="text-dark">Pozisyon için alınacak kişi Sayısı(*)</span>
-				@Html.EditorFor(a => a.NeededEmployeeCount, new { htmlAttributes = new { @class = "form-control col-md-12", type = "number" } })
-				@Html.ValidationMessageFor(model => model.NeededEmployeeCount, "Bu alan boş geçilemez", new { @class = "text-danger" })
-			</div>
-			<div class="form-group w-100">
-				<span class="text-dark">Tecrübe(*)</span>
-				@Html.EditorFor(a => a.Experiences, new { htmlAttributes = new { @class = "form-control col-md-12", type = "number" } })
-				@Html.ValidationMessageFor(model => model.Experiences, "Bu alan boş geçilemez", new { @class = "text-danger" })
-			</div>
-			<div class="form-group w-100">
-				<span class="text-dark">Askerlik Durumu(*)</span><br />
-				<div class="form-check form-check-inline">
-					@Html.EditorFor(a => a.MilitaryState, new { htmlAttributes = new { @class = "form-check-input", type = "radio", name = "AskerlikDurumu", id = "done" } })
-					<label class="form-check-label" for="done">Yapıldı.</label>
-				</div>
-				<div class="form-check form-check-inline">
-					@Html.EditorFor(a => a.MilitaryState, new { htmlAttributes = new { @class = "form-check-input", type = "radio", name = "AskerlikDurumu", id = "nope" } })
-					<label class="form-check-label" for="nope">Yapılmadı.</label>
-				</div>
+            <div class="form-group w-100">
+                <span class="text-dark">Pozisyon için alınacak kişi Sayısı(*)</span>
+                @Html.EditorFor(a => a.NeededEmployeeCount, new { htmlAttributes = new { @class = "form-control col-md-12", type = "number" } })
+                @Html.ValidationMessageFor(model => model.NeededEmployeeCount, "Bu alan boş geçilemez", new { @class = "text-danger" })
+            </div>
+            <div class="form-group w-100">
+                <span class="text-dark">Tecrübe(*)</span>
+                @Html.EditorFor(a => a.Experiences, new { htmlAttributes = new { @class = "form-control col-md-12", type = "number" } })
+                @Html.ValidationMessageFor(model => model.Experiences, "Bu alan boş geçilemez", new { @class = "text-danger" })
+            </div>
+            <div class="form-group w-100">
+                <span class="text-dark">Eğitim Seviyesi(*)</span>
+                <select class="w-100 form-control" id="egitim">
+                    <option selected>Eğitim seviyenizi seçiniz..</option>
+                    @foreach (EducationLevel item in ViewBag.Egitim)
+                    {
+                        <option value="@item.ToString()">@item.ToString()</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group w-100">
+                <span class="text-dark">Askerlik Durumu(*)</span>
+                <select class="w-100 form-control" id="askerlik">
+                    <option selected>Eğitim seviyenizi seçiniz..</option>
+                    @foreach (MilitaryState item in ViewBag.Askerlik)
+                    {
+                        <option value="@item.ToString()">@item.ToString()</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group w-100">
+                <span class="text-dark">Yetenekler(*)</span>
+            </div>
+            <div class="form-check">
+                <table>
+                    @{
+                        foreach (Perfection item in ViewBag.Yetenekler)
+                        {
+                            <tr class="m-4 w-100">
+                                <td class="pb-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="@item.ID">
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="@item.ID">
+                                        @item.PerfectionName
+                                    </label>
+                                </td>
+                            </tr>
+                        }
 
-			</div>
-			<div class="form-group w-100">
-				<span class="text-dark">Yetenekler(*)</span>
-			</div>
-			<div class="form-check">
-				<table>
-					@{
-						foreach (Perfection item in ViewBag.Yetenekler)
-						{
-							<tr class="m-4 w-100">
-								<td class="pb-3">
-									<input class="form-check-input" type="checkbox" value="" id="@item.ID">
-								</td>
-								<td>
-									<label class="form-check-label" for="@item.ID">
-										@item.PerfectionName
-									</label>
-								</td>
-							</tr>
-						}
+                    }
+                </table>
+            </div>
+            <br />
+            <div class="form-group w-100">
+                <span class="text-dark">Eğitim Seviyesi(*)</span>
+                <select class="w-100 form-control" id="egitim">
+                    <option selected>Eğitim seviyenizi seçiniz..</option>
+                    @foreach (EducationLevel item in ViewBag.Egitim)
+                    {
+                        <option value="@item.ToString()">@item.ToString()</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group w-100">
+                <select class="w-100 form-control" onchange="IlceleriGetir()" id="il">
+                    <option selected>İl Seçiniz...</option>
+                    @foreach (City item in ViewBag.Iller)
+                    {
+                        <option value="@item.ID">@item.CityName</option>
+                    }
+                </select><br />
+                <select class="w-100 form-control" id="ilce">
+                    <option selected>İlçe Seçiniz...</option>
+                    @foreach (Town item in ViewBag.Ilce)
+                    {
+                        <option value="@item.ID">@item.TownName</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group w-100">
+                <button type="submit" class="btn btn-success w-100 mt-2">Yayınla!</button>
+            </div>
+        }
 
-					}
-				</table>
-			</div>
-			<br />
-			<div class="form-group w-100">
-				<span class="text-dark">Eğitim Seviyesi(*)</span>
-				@Html.EditorFor(a => a.EducationLevel, new { htmlAttributes = new { @class = "form-control col-md-12" } })
-
-				@Html.ValidationMessageFor(model => model.EducationLevel, "Bu alan boş geçilemez", new { @class = "text-danger" })
-			</div>
-			<div class="form-group w-100">
-				<select class="w-100 form-control" onchange="IlceleriGetir()" id="il">
-					<option selected>İl Seçiniz...</option>
-					@foreach (City item in ViewBag.Iller)
-					{
-						<option value="@item.ID">@item.CityName</option>
-					}
-				</select><br />
-				<select class="w-100 form-control" id="ilce">
-					<option selected>İlçe Seçiniz...</option>
-					@foreach (Town item in ViewBag.Ilce)
-					{
-						<option value="@item.ID">@item.TownName</option>
-					}
-				</select>
-			</div>
-			<div class="form-group w-100">
-				<button type="submit" class="btn btn-success w-100 mt-2">Yayınla!</button>
-			</div>
-		}
-
-	</div>
+    </div>
 </div>
 
 

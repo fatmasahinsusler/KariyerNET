@@ -2,6 +2,7 @@
 using KariyerNET.BLL.Abstract.CompanySide;
 using KariyerNET.BLL.Abstract.EmployeeSide;
 using KariyerNET.Model.CompanySide;
+using KariyerNET.Model.EmployeeSide;
 using KariyerNET.UI.MVC.CustomFilter;
 using KariyerNET.UI.MVC.Tools;
 using System;
@@ -19,14 +20,16 @@ namespace KariyerNET.UI.MVC.Controllers
         ITownService _townService;
         IPerfectionService _perfectionService;
         IJobAdvertService _jobAdvertService;
+        IEducationService _educationService;
 
-        public CompanyController(ICompanyService companyService, ITownService townService, ICityService cityService, IPerfectionService perfectionService, IJobAdvertService jobAdvertService)
+        public CompanyController(ICompanyService companyService, ITownService townService, ICityService cityService, IPerfectionService perfectionService, IJobAdvertService jobAdvertService, IEducationService educationService)
         {
             _companyService = companyService;
             _townService = townService;
             _cityService = cityService;
             _perfectionService = perfectionService;
             _jobAdvertService = jobAdvertService;
+            _educationService = educationService;
         }
         public ActionResult Index()
         {
@@ -41,24 +44,24 @@ namespace KariyerNET.UI.MVC.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]      
+        [ValidateAntiForgeryToken]
         public ActionResult Login(Company company)
         {
-            var gelenKullanici = _companyService.CompanyLogin(company.EMail,company.Password);
+            var gelenKullanici = _companyService.CompanyLogin(company.EMail, company.Password);
             if (gelenKullanici != null)
             {
                 Session["user"] = gelenKullanici;
                 return RedirectToAction("Index", "Home"); //babanın evine git:D
-            }            
-                ViewBag.Error = "Kullanıcı Bulunamadı, Lütfen Üye Olunuz!";
-                return View();           
+            }
+            ViewBag.Error = "Kullanıcı Bulunamadı, Lütfen Üye Olunuz!";
+            return View();
         }
 
 
 
         [HttpGet]
         public ActionResult Register()
-        { 
+        {
             return View();
         }
 
@@ -66,7 +69,7 @@ namespace KariyerNET.UI.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(Company company)
         {
-            
+
             try
             {
                 _companyService.Insert(company);
@@ -78,8 +81,8 @@ namespace KariyerNET.UI.MVC.Controllers
                 ViewBag.Error = ex.Message;
                 return View();
             }
-           
-           
+
+
         }
 
 
@@ -103,17 +106,19 @@ namespace KariyerNET.UI.MVC.Controllers
         }
 
 
-
         [HttpGet]
         public ActionResult PublishedJobAdvert()
-        {          
-            ViewBag.Iller = _cityService.GetAll();            
-            ViewBag.Ilce = _townService.GetAll();            
-            ViewBag.Yetenekler = _perfectionService.GetAll();            
+        {
+            ViewBag.Iller = _cityService.GetAll();
+            ViewBag.Ilce = _townService.GetAll();
+            ViewBag.Yetenekler = _perfectionService.GetAll();
+            ViewBag.Egitim = Enum.GetValues(typeof(EducationLevel));
+            ViewBag.Askerlik = Enum.GetValues(typeof(MilitaryState));
             return View();
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult PublishedJobAdvert(JobAdvert jobAdvert)
         {
             try
@@ -124,9 +129,14 @@ namespace KariyerNET.UI.MVC.Controllers
             }
             catch (Exception ex)
             {
+                ViewBag.Iller = _cityService.GetAll();
+                ViewBag.Ilce = _townService.GetAll();
+                ViewBag.Yetenekler = _perfectionService.GetAll();
+                ViewBag.Egitim = Enum.GetValues(typeof(EducationLevel));
+                ViewBag.Askerlik = Enum.GetValues(typeof(MilitaryState));
                 ViewBag.Error = ex.Message;
                 return View();
-            }          
+            }
         }
 
     }
