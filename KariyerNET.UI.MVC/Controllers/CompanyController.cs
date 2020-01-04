@@ -58,7 +58,7 @@ namespace KariyerNET.UI.MVC.Controllers
         }
 
 
-
+        [IsLoginFilter]
         [HttpGet]
         public ActionResult Register()
         {
