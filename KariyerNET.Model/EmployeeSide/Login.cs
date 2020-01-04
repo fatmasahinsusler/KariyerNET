@@ -10,7 +10,9 @@ namespace KariyerNET.Model.EmployeeSide
 {
     public class Login:BaseEntity
     {
+        [Required(ErrorMessage ="İsim kısmı boş geçilemez.")]
         public string FirstName { get; set; } //üye girişi için yazdık silinebilir.
+        [Required(ErrorMessage ="Soyad kısmı boş geçilemez.")]
         public string SurName { get; set; } //üye girişi için yazdık silinebilir.
         [Required(ErrorMessage ="E-Mail kısmı boş geçilemez.")]
         [EmailAddress(ErrorMessage ="Lütfen geçerli bir mail adresi giriniz.")]

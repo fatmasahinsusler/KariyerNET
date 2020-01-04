@@ -69,11 +69,22 @@ namespace KariyerNET.UI.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(Company company)
         {
-
             try
             {
+                if (Request.Files.Count > 0)
+                {
+                    //Guid nesnesini benzersiz dosya adı oluşturmak için tanımladık ve Replace ile aradaki “-” işaretini atıp yan yana yazma işlemi yaptık.
+                    string DosyaAdi = Guid.NewGuid().ToString().Replace("-", "");
+                    //Kaydetceğimiz resmin uzantısını aldık.
+                    string uzanti = System.IO.Path.GetExtension(Request.Files[0].FileName);
+                    string TamYolYeri = "~/Content/image/KullaniciResimleri/" + DosyaAdi + uzanti;
+                    //Eklediğimiz Resni Server.MapPath methodu ile Dosya Adıyla birlikte kaydettik.
+                    Request.Files[0].SaveAs(Server.MapPath(TamYolYeri));
+                    //Ve veritabanına kayıt için dosya adımızı değişkene aktarıyoruz.
+                    company.LogoURL = DosyaAdi + uzanti;
+                }
                 _companyService.Insert(company);
-                ViewBag.Message = "Kayıt oluşturuldu";
+                TempData["Message"] = "Kayıt oluşturuldu";
                 MailHelper.SendConfirmationMail(company.EMail, company.CompanyName);
                 return RedirectToAction("Login", "Company");
             }
@@ -94,15 +105,16 @@ namespace KariyerNET.UI.MVC.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult ForgetPassword(int companyID)
+        public ActionResult ForgetPassword(Company company)
         {
-            var kullanici = _companyService.Get(companyID);
+            var kullanici = _companyService.GetByMail(company.EMail);
             bool sonuc = MailHelper.SendForgottenPasswordMail(kullanici.EMail, kullanici.CompanyName, kullanici.Password);
             if (!sonuc)
             {
                 ViewBag.Error = "Mail gönderilemedi, daha sonra tekrar deneyiniz.";
                 return View();
             }
+            TempData["Message"] = "Hatırlatma maili kayıtlı e-posta adresinize gönderildi"; 
             return RedirectToAction("Login", "Company");
         }
 

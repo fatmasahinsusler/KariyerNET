@@ -51,6 +51,11 @@ namespace KariyerNET.BLL.Concrete.CompanySide
 			return _companyDAL.GetAll();
 		}
 
+		public Company GetByMail(string mail)
+		{
+			return _companyDAL.Get(a => a.EMail == mail);
+		}
+
 		public void Insert(Company entity)
 		{
 			_companyDAL.Add(entity);

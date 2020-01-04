@@ -6,10 +6,10 @@
     <div class="offset-3 col-6 p-5">
         @Html.ValidationSummary()
         @{
-            if (ViewBag.Message != null)
+            if (TempData["Message"] != null)
             {
                 <div class="alert-success">
-                    @ViewBag.Message
+                    @TempData["Message"]
                 </div>
             }
         }

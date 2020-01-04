@@ -283,6 +283,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\image\KullaniciResimleri\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
