@@ -25,7 +25,7 @@
                         @Html.ActionLink("Ana Sayfa", "Index", "Home", null, new { @class = "nav-link active font-weight-bold text-black" })
                     </li>
                     <li class="nav-item">
-                        @Html.ActionLink("İş Ara", "Index", "Home", null, new { @class = "nav-link active font-weight-bold text-black-50" })
+                        @Html.ActionLink("İş Ara", "Index", "JobAdvert", null, new { @class = "nav-link active font-weight-bold text-black-50" })
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
@@ -46,13 +46,15 @@
     <br /><br /><br />
 
 
-    <div class="body-content">
-        <div class="float-left col-md-9">
+    <div class="body-content container">
+        <div class="float-left col-md-8">
             @RenderBody()
         </div>
         @{Html.RenderPartial("_RightSide");}
     </div>
-    <footer class="text-center container d-block">
+
+
+    <footer class="text-center container modal-footer">
         <hr />
         @Html.ActionLink("Hakkımızda", "#", "#", new { @class = "d-inline-block col-1" })
         @Html.ActionLink("İlan Yayımla", "#", "#", new { @class = "d-inline-block col-2" })

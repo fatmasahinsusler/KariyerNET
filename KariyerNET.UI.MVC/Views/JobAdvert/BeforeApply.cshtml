@@ -9,15 +9,26 @@
         <br />
         <div class="form-group  text-center" id="applyGraphic">
 
-         
+
             <img src="~/Content/image/gra.jpg" width="100" height="100" />
         </div>
 
         <div class="form-group text-center ">
-            <span class="text-dark text-center text-dark-18"> Yetenekler ile ilan uyumu %75 </span>
+            <span class="text-dark text-center text-dark-18"> Yetenekler ile ilan uyumunuz %75 </span>
         </div>
 
-        <div class="form-group text-center ">
+
+
+        <div class="form-group w-75 offset-3">
+            <select class="w-50 form-control btn-outline-secondary ml-4" id="cv">
+                <option selected>Özgeçmiş Seçiniz</option>
+                <option>CV1</option>
+                <option>CV2</option>
+                <option>CV3</option>
+            </select>
+        </div>
+
+        @*<div class="form-group text-center "> // kullanamadık bunu değiştiridim ben de
             <button class="btn btn-outline-secondary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                 Özgeçmiş Seçiniz
             </button>
@@ -26,7 +37,7 @@
                 <a class="dropdown-item" href="#">CV2</a>
                 <a class="dropdown-item" href="#">CV3</a>
             </div>
-        </div>
+        </div>*@
         <br />
     </div>
     <div class="form group text-center mt-2 " id="applyButton">
