@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace KariyerNET.DAL.Concrete
 {
-	public class MyStrategy : DropCreateDatabaseAlways<KariyerNETDBContext>
+	public class MyStrategy : DropCreateDatabaseIfModelChanges<KariyerNETDBContext>
 	{
 		protected override void Seed(KariyerNETDBContext context)
 		{

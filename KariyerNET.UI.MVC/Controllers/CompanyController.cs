@@ -74,6 +74,7 @@ namespace KariyerNET.UI.MVC.Controllers
             {
                 _companyService.Insert(company);
                 ViewBag.Message = "Kayıt oluşturuldu";
+                MailHelper.SendConfirmationMail(company.EMail, company.CompanyName);
                 return RedirectToAction("Login", "Company");
             }
             catch (Exception ex)
@@ -96,7 +97,7 @@ namespace KariyerNET.UI.MVC.Controllers
         public ActionResult ForgetPassword(int companyID)
         {
             var kullanici = _companyService.Get(companyID);
-            bool sonuc = MailHelper.SendConfirmationMail(kullanici.EMail, kullanici.CompanyName, kullanici.Password);
+            bool sonuc = MailHelper.SendForgottenPasswordMail(kullanici.EMail, kullanici.CompanyName, kullanici.Password);
             if (!sonuc)
             {
                 ViewBag.Error = "Mail gönderilemedi, daha sonra tekrar deneyiniz.";

@@ -12,9 +12,10 @@ namespace KariyerNET.Model.EmployeeSide
     {
         public string FirstName { get; set; } //üye girişi için yazdık silinebilir.
         public string SurName { get; set; } //üye girişi için yazdık silinebilir.
-        [Required]
+        [Required(ErrorMessage ="E-Mail kısmı boş geçilemez.")]
+        [EmailAddress(ErrorMessage ="Lütfen geçerli bir mail adresi giriniz.")]
         public string LoginMail { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Şifre kısmı boş geçilemez.")]
         public string Password { get; set; }
     }
 }
